@@ -1,0 +1,18 @@
+.bloc-inscription {
+    display: flex;
+}
+
+.full-logo {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-logo img {
+    width: 75%;
+}
+
+.bloc-inscription-input {
+    width: 50%;
+}

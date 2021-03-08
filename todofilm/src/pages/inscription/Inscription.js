@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import InputComponent from './InputComponent'
-import Logo from './Logo'
-import '../styles/Inscription.css'
+import InputComponent from '../../components/InputComponent'
+import Logo from '../../components/Logo'
+import './Inscription.css'
 
 class Inscription extends Component {
 
