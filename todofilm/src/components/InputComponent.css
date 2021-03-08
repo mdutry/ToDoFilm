@@ -1,0 +1,22 @@
+.input-style {
+    width: 50%;
+    margin: 0 auto 1em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-style > input {
+    width: 50%;
+    padding-right: 2em;
+    height: 1.5em;
+    padding-left: 0.5em;
+}
+
+.redText {
+    color:red
+}
+
+.greenText {
+    color:green
+}
