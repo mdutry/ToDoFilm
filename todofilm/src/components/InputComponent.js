@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './InputComponent.css'
-import {informationText} from './informationText'
+import {informationText} from '../datas/informationText'
+import {datasUser} from '../datas/datasUser'
 
 class InputComponent extends Component {
 
@@ -11,7 +12,7 @@ class InputComponent extends Component {
     }
 
     conditionInput = (e) => {
-        const {id, recupData, type} = this.props
+        const {id, recupData} = this.props
 
         this.setState({ value: e.target.value });
         // PRENOM
@@ -23,13 +24,15 @@ class InputComponent extends Component {
                     smallValue: informationText.OK,
                     classSmallStyle: "greenText",
                 });
-                recupData(e.target.value, true);
+                datasUser.prenom = e.target.value
+                recupData('prenom', true);
             } else {
                 this.setState({
                     smallValue: informationText.ERROR_InputText,
                     classSmallStyle: "redText",
                 });
-                recupData(e.target.value, false);
+                datasUser.prenom = e.target.value
+                recupData('prenom', false);
             }
         }
 
@@ -42,12 +45,14 @@ class InputComponent extends Component {
                     smallValue: informationText.OK,
                     classSmallStyle:'greenText'
                 })
-                recupData(e.target.value, true)
+                datasUser.nom = e.target.value
+                recupData('nom', true);
             } else {
                 this.setState({
                     smallValue: informationText.ERROR_InputText,
                     classSmallStyle:'redText'})
-                recupData(e.target.value, false);
+                datasUser.nom = e.target.value
+                recupData('nom', false);
             }
         }
 
@@ -60,12 +65,14 @@ class InputComponent extends Component {
                     smallValue: informationText.OK_Mail,
                     classSmallStyle:'greenText'
                 })
-                recupData(e.target.value, true)
+                datasUser.email = e.target.value
+                recupData('email', true);
             } else {
                 this.setState({
                     smallValue: informationText.ERROR_Mail,
                     classSmallStyle:'redText'})
-                recupData(e.target.value, false);
+                datasUser.email = e.target.value
+                recupData('email', false);
             }
         }
 
@@ -78,28 +85,30 @@ class InputComponent extends Component {
                     smallValue: informationText.OK_Password,
                     classSmallStyle:'greenText'
                 })
-                recupData(e.target.value, true)
+                datasUser.password = e.target.value
+                recupData('passwordInit', true);
             } else {
                 this.setState({
                     smallValue: informationText.ERROR_PasswordInit,
                     classSmallStyle:'redText'})
-                recupData(e.target.value, false);
+                datasUser.password = e.target.value
+                recupData('passwordInit', false);
             }
         }
         
         // PASSWORD VERIF
         else if (id === 'passwordVerif-input') {
-            if (e.target.value === this.props.passwordVerif) {
+            if (e.target.value === datasUser.password) {
                 this.setState({
                     smallValue: informationText.OK,
                     classSmallStyle:'greenText'
                 })
-                recupData(true)
+                recupData('passwordVerif', true);
             } else {
                 this.setState({
                     smallValue: informationText.ERROR_PasswordVerif,
                     classSmallStyle:'redText'})
-                recupData(false);
+                recupData('passwordVerif', false);
             }
         }
     }
