@@ -2,91 +2,79 @@ import React, {Component} from 'react'
 import InputComponent from '../../components/InputComponent'
 import Logo from '../../components/Logo'
 import './Inscription.css'
+import {datasUser} from '../../datas/datasUser'
 
 class Inscription extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      // data: {
-        prenom: '',
-        nom: '',
-        email: '',
-        password: '',
-        isDisabled: true,
-      // }
+    state = {
         conditionPrenom: false,
         conditionNom: false,
         conditionEmail: false,
         conditionPasswordInit: false,
         conditionPasswordVerif: false
     }
-  }
 
-  recupDataPrenom = (data, condition) => {
-    this.setState({
-      prenom: data,
-      conditionPrenom: condition
-    })
-  }
+    recupData = (id, condition) => {
+        if (id === 'prenom') {
+            this.setState({
+                conditionPrenom: condition
+            })
+        }
+        else if (id === 'nom') {
+            this.setState({
+                conditionNom: condition
+            })
+        }
+        else if (id === 'email') {
+            this.setState({
+                conditionEmail: condition
+            })
+        }
+        else if (id === 'passwordInit') {
+            this.setState({
+                conditionPasswordInit: condition
+            })
+        }
+        else if (id === 'passwordVerif') {
+            this.setState({
+                conditionPasswordVerif: condition
+            })
+        }
+    }
 
-  recupDataNom = (data, condition) => {
-    this.setState({
-        nom: data,
-        conditionNom: condition
-      })
-  }
+    showData = () => {
+      console.log("Prénom : ", datasUser.prenom, "- Nom : ", datasUser.nom, 
+      "- Adresse mail : ", datasUser.email, "- Mot de passe : ", datasUser.password)
+    }
 
-  recupDataMail = (data, condition) => {
-    this.setState({
-      email: data,
-      conditionEmail: condition
-    })
-  }
+    render () {
 
-  recupDataPassword = (data, condition) => {
-    this.setState({
-      password: data,
-      conditionPasswordInit: condition
-    })
-  }
+        const {conditionPrenom, conditionNom, conditionEmail, conditionPasswordInit, conditionPasswordVerif} = this.state
+      
+        const verifDisabled = (conditionPrenom === true && conditionNom === true && conditionEmail === true && conditionPasswordInit === true &&
+        conditionPasswordVerif === true) ? false : true;
 
-  recupDataPasswordVerif = (condition) => {
-    this.setState({conditionPasswordVerif: condition})
-  }
+        return (
+        <div className='bloc-inscription'>
 
+            <div className='full-logo'>
+              <Logo />
+            </div>
 
-  showData = () => {
-    console.log("PARENT => Prénom : ", this.state.prenom, "- Nom : ", this.state.nom, 
-    "- Adresse mail : ", this.state.email, "- Mot de passe : ", this.state.password)
-  }
+            <div className='bloc-inscription-input'>
+              <h1>Inscription</h1>
+              
+              <InputComponent id='prenom-input' name='Prénom :' type='text' recupData={this.recupData} />
+              <InputComponent id='nom-input' name='Nom :' type='text' recupData={this.recupData} />
+              <InputComponent id='email-input' name='Adresse mail :' type='email' recupData={this.recupData} />
+              <InputComponent id='passwordInit-input' name='Mot de passe :' type='password' recupData={this.recupData} />
+              <InputComponent id='passwordVerif-input' name='Confirmez le mot de passe :' type='password' recupData={this.recupData} />
 
-  render () {
-    const verifDisabled = (this.state.conditionPrenom === true && this.state.conditionNom === true &&
-    this.state.conditionEmail === true && this.state.conditionPasswordInit === true &&
-    this.state.conditionPasswordVerif === true) ? false : true
-
-    return (
-      <div className='bloc-inscription'>
-
-        <div className='full-logo'>
-          <Logo />
+              <button onClick={this.showData} disabled={verifDisabled}>Valider</button>
+            </div>
         </div>
-
-        <div className='bloc-inscription-input'>
-          <h1>Inscription</h1>
-          
-          <InputComponent id='prenom-input' name='Prénom :' type='text' recupData={this.recupDataPrenom} />
-          <InputComponent id='nom-input' name='Nom :' type='text' recupData={this.recupDataNom} />
-          <InputComponent id='email-input' name='Adresse mail :' type='email' recupData={this.recupDataMail} />
-          <InputComponent id='passwordInit-input' name='Mot de passe :' type='password' passwordInit={this.state.password} recupData={this.recupDataPassword}/>
-          <InputComponent id='passwordVerif-input' name='Confirmez le mot de passe :' type='password' passwordVerif={this.state.password} recupData={this.recupDataPasswordVerif} />
-
-          <button onClick={this.showData} disabled={verifDisabled}>Valider</button>
-        </div>
-    </div>
-    );
-  }
+        );
+    }
 }
 
 export default Inscription;
