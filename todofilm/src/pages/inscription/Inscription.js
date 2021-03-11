@@ -55,22 +55,24 @@ class Inscription extends Component {
         conditionPasswordVerif === true) ? false : true;
 
         return (
-        <div className='bloc-inscription'>
+        <div className='bloc-identify'>
 
             <div className='full-logo'>
-              <Logo />
+                <Logo />
             </div>
 
-            <div className='bloc-inscription-input'>
-              <h1>Inscription</h1>
-              
-              <InputComponent id='prenom-input' name='Prénom :' type='text' recupData={this.recupData} />
-              <InputComponent id='nom-input' name='Nom :' type='text' recupData={this.recupData} />
-              <InputComponent id='email-input' name='Adresse mail :' type='email' recupData={this.recupData} />
-              <InputComponent id='passwordInit-input' name='Mot de passe :' type='password' recupData={this.recupData} />
-              <InputComponent id='passwordVerif-input' name='Confirmez le mot de passe :' type='password' recupData={this.recupData} />
+            <div className='bloc-identify-input'>
+                <h1>Inscription</h1>
+                
+                <InputComponent id='prenom-input' placeholder='Prénom' type='text' recupData={this.recupData} />
+                <InputComponent id='nom-input' placeholder='Nom' type='text' recupData={this.recupData} />
+                <InputComponent id='email-input' placeholder='Adresse mail' type='email' recupData={this.recupData} />
+                <InputComponent id='passwordInit-input' placeholder='Mot de passe' type='password' recupData={this.recupData} />
+                <InputComponent id='passwordVerif-input' placeholder='Vérification mot de passe' type='password' recupData={this.recupData} />
 
-              <button onClick={this.showData} disabled={verifDisabled}>Valider</button>
+                <div className='bloc-identify-button'>
+                    <button onClick={this.showData} disabled={verifDisabled}>Valider</button>
+                </div>
             </div>
         </div>
         );

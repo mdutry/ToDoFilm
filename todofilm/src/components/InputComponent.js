@@ -114,22 +114,22 @@ class InputComponent extends Component {
     }
     
     render () {
-        const {name, type} = this.props
+        const {placeholder, type, value} = this.props
 
         const input = (type === "button") ? 
         (<input 
             type={type}
-            value={this.props.value}
+            value={value}
         />) : 
         (<input 
             type={type}
+            placeholder={placeholder}
             value={this.state.value}
             onChange={this.conditionInput}
         />)
 
         return (
         <div className='input-style'>
-            <label>{name}</label>
             {input}
             <small className={this.state.classSmallStyle}>{this.state.smallValue}</small>
         </div>

@@ -7,10 +7,18 @@
 }
 
 .input-style > input {
-    width: 50%;
-    padding-right: 2em;
-    height: 1.5em;
-    padding-left: 0.5em;
+    width: 75%;
+    padding: 0 1.5em 0 1.5em;
+    height: 2.5em;
+    border: 2px solid #660099; 
+    border-radius: 25px;
+    box-shadow: 4px 4px 4px rgba(102, 0, 153, 0.25);
+    font-size: 1.25em;
+}
+
+.input-style > input::placeholder {
+    color: #BA80D8;
+    font-size: 1.25em;
 }
 
 .redText {
