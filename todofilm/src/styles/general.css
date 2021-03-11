@@ -1,3 +1,10 @@
+/* BACKGROUND GÉNÉRAL DU SITE */
+.background-yellow {
+    background-color: #FFFFFA;
+}
+
+
+/* CSS GÉNÉRAL DES 1ERES PAGES SITE (accueil, connexion, inscription, mot de passe oublié  */
 .bloc-identify {
     display: flex;
     height: 100vh;

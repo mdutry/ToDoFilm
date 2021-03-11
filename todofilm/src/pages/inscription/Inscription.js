@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import InputComponent from '../../components/InputComponent'
 import Logo from '../../components/Logo'
-import './Inscription.css'
+import '../../styles/general.css'
 import {datasUser} from '../../datas/datasUser'
 
 class Inscription extends Component {
@@ -55,7 +55,7 @@ class Inscription extends Component {
         conditionPasswordVerif === true) ? false : true;
 
         return (
-        <div className='bloc-identify'>
+        <div className='bloc-identify background-yellow'>
 
             <div className='full-logo'>
                 <Logo />
