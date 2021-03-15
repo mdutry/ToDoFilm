@@ -1,0 +1,3 @@
+.bloc-recherche input[type="text"] {
+    background: no-repeat top left contain url("../images/loupe.jpg");
+}

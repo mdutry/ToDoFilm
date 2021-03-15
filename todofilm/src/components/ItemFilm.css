@@ -1,0 +1,24 @@
+.bloc-item-film {
+    width: 17%;
+    margin-bottom: 2em;
+    padding-left: 2%;
+}
+
+.bloc-item-film > img {
+    width: 90%;
+}
+
+.bloc-item-film-title {
+    display: flex;
+    align-items: flex-start;
+}
+
+.bloc-item-film-title > img {
+    width: 15%;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.bloc-item-film p {
+    margin-block-start: 0;
+}

@@ -4,7 +4,7 @@ export const movieList = [
       id:"1fg",
       year: "1994",
       released: "5 octobre 1994",
-      runtime: "140 min",
+      runtime: 140,
       genre: [
         "Romance",
         "Drame",
@@ -615,7 +615,7 @@ export const movieList = [
       released: "9 avril 2014",
       runtime: 139,
       genre: [
-        "Scince-fiction",
+        "Science-fiction",
         "Action",
         "Romance"
       ],
