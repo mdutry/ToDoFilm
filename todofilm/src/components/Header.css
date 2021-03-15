@@ -1,0 +1,17 @@
+.bloc-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 10%;
+    background-color: #660099;
+}
+.bloc-header-logo {
+    width: 100px;
+    height: 20%;
+}
+.bloc-header-profil {
+    width: 50px;
+    height: 50px;
+
+}
