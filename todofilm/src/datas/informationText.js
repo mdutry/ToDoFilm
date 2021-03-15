@@ -5,5 +5,6 @@ export const informationText = {
     ERROR_PasswordVerif: "Le mot de passe n'est pas identique.",
     OK: "✔",
     OK_Mail: "Adresse mail valide", 
-    OK_Password: "Mot de passe valide"
+    OK_Password: "Mot de passe valide",
+    MdP_Oublie: "Mot de passe oublié"
 }

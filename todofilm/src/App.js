@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Accueil from './pages/accueil/Accueil'
-import Connexion from './pages/connexion/Connexion'
+import Accueil from './pages/accueil/accueil'
+import Connexion from './pages/connexion/connexion'
 import Inscription from './pages/inscription/Inscription'
 import MdPOublie from './pages/MdP oublie/MdPOublie'
 import PageRecherche from './pages/recherche/PageRecherche'

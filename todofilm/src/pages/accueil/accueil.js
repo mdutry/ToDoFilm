@@ -4,6 +4,7 @@ import InputComponent from '../../components/InputComponent'
 import Logo from '../../components/Logo'
 import '../../styles/general.css'
 import './Accueil.css'
+import {informationText} from '../../datas/informationText'
 
 function Accueil() {
     return (
@@ -21,7 +22,7 @@ function Accueil() {
                     <InputComponent type="button" value="Inscription"  />
                 </Link>
                 <Link to="/mot-de-passe-oublie" className="bloc-identify-Mdpo">
-                    Mot de passe oublié
+                    {informationText.MdP_Oublie}
                 </Link>
             </div>
         </div>
