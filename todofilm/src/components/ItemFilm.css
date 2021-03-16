@@ -1,7 +1,7 @@
 .bloc-item-film {
-    width: 17%;
+    width: 20%;
     margin-bottom: 2em;
-    padding-left: 2%;
+    margin-left: 4%;
 }
 
 .bloc-item-film > img {
