@@ -15,27 +15,56 @@ class Inscription extends Component {
 
   recupData = (id, condition) => {
     // switch case
-    if (id === "prenom") {
-      this.setState({
-        conditionPrenom: condition,
-      });
-    } else if (id === "nom") {
-      this.setState({
-        conditionNom: condition,
-      });
-    } else if (id === "email") {
-      this.setState({
-        conditionEmail: condition,
-      });
-    } else if (id === "passwordInit") {
-      this.setState({
-        conditionPasswordInit: condition,
-      });
-    } else if (id === "passwordVerif") {
-      this.setState({
-        conditionPasswordVerif: condition,
-      });
+    switch (id) {
+      case "prenom" :
+        this.setState({
+          conditionPrenom: condition,
+        });
+        break;
+      case "nom" :
+        this.setState({
+          conditionNom: condition,
+        });
+        break;
+      case "email" :
+        this.setState({
+          conditionEmail: condition,
+        });
+        break;
+      case "passwordInit" :
+        this.setState({
+          conditionPasswordInit: condition,
+        });
+        break;
+      case "passwordVerif" :
+        this.setState({
+          conditionPasswordVerif: condition,
+        });
+        break;
     }
+
+    // IF ELSE
+    // if (id === "prenom") {
+    //   this.setState({
+    //     conditionPrenom: condition,
+    //   });
+    // } else if (id === "nom") {
+    //   this.setState({
+    //     conditionNom: condition,
+    //   });
+    // } else if (id === "email") {
+    //   this.setState({
+    //     conditionEmail: condition,
+    //   });
+    // } else if (id === "passwordInit") {
+    //   this.setState({
+    //     conditionPasswordInit: condition,
+    //   });
+    // } else if (id === "passwordVerif") {
+    //   this.setState({
+    //     conditionPasswordVerif: condition,
+    //   });
+    // }
   };
 
   showData = () => {
