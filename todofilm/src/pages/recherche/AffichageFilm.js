@@ -20,8 +20,6 @@ class AffichageFilm extends Component {
                     />
                 ))}
 
-                
-                
             </div>
         );
     }

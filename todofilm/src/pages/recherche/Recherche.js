@@ -41,7 +41,7 @@ class Recherche extends Component {
 
                     <h3>Filtres</h3>
 
-                    <InputFiltre labelValue='Année :' type='select' id='year' filtreOption={selectYears} />
+                    <InputFiltre labelValue='Année :' type='select' id='year'  filtreOption={selectYears} />
                     <InputFiltre labelValue='Genre :' type='select' id='genre' filtreOption={selectGenre} />
                     <InputFiltre labelValue='Pays :' type='select' id='country' filtreOption={selectCountry} />
                     <InputFiltre labelValue='Acteur :' type='text' />

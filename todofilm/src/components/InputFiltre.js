@@ -26,9 +26,11 @@ class InputFiltre extends Component {
 
         const input = (type === "select") ? 
         (<select>
+            <option>- Choisir une option -</option>
             {option}
         </select> ) : (type === "range") ? 
         (<input 
+            className="recherche-input-range-css"
             type={type}
             min={min}
             max={max}
