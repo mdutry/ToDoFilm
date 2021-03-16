@@ -371,7 +371,7 @@ export const movieList = [
       country: "États-Unis",
       awards: "5 prix & 24 nominations",
       poster: "https://youtu.be/Sob95vSNeeQ",
-      teaser: "https://fr.web.img2.acsta.net/c_310_420/medias/nmedia/18/36/02/52/18846059.jpg",
+      teaser: "https://images-na.ssl-images-amazon.com/images/I/71zSZQzlK%2BL._AC_SL1200_.jpg",
       pressNote: 4.4,
       spectatorsNote: 4.5,
       synopsis: "L'odyssée sanglante et burlesque de petits malfrats dans la jungle de Hollywood à travers trois histoires qui s'entremêlent."
