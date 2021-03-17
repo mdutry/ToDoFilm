@@ -1,0 +1,36 @@
+.bloc-erreur {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bloc-erreur-contenu {
+    width: 50%;
+    height: 100%;
+    padding-left: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.bloc-erreur-text {
+    padding-left: 2em;
+    margin-top: 2em;
+}
+
+.bloc-erreur-text > h1 {
+    color: #660099;
+    font-size: 2.5em;
+    margin-block-start: 0em;
+}
+
+.bloc-erreur-text > p {
+    margin-block-start: 0;
+}
+
+.bloc-erreur-contenu > img {
+    width: 75%;
+    align-self: center;
+    margin-top: 2em;
+}
