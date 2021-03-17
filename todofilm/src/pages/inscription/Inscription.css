@@ -1,0 +1,28 @@
+.bloc-inscription {
+    display: flex;
+    height: 100vh;
+}
+
+.full-logo {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-logo img {
+    width: 75%;
+}
+
+.bloc-inscription-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.bloc-inscription-input h1 {
+    margin-block-start: 0em;
+}
