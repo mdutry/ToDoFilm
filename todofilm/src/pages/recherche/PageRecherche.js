@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Header from '../../components/Header'
 import Recherche from './Recherche'
 import AffichageFilm from './AffichageFilm'
 import './PageRecherche.css';
@@ -9,11 +10,9 @@ class PageRecherche extends Component {
 
         return (
             <div className='page-recherche'>
-                <div id="header">HEADER PRENANT TOUTE LA PLACE</div>
-                
+                <Header />
                 <Recherche />
                 <AffichageFilm />
-
             </div>
         );
     }
