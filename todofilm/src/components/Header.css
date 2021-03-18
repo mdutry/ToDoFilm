@@ -29,19 +29,47 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 1em;
     width: 33%;
     height: 90%;
+}
+
+.bloc-header-recherche a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 2em;
+    width: 50%;
+    border-radius: 25px;
+    background-color: white;
+    text-decoration: none;
+}
+
+.bloc-header-recherche img {
+    height: 75%;
+    margin-left: 1em;
 }
 
 /* CSS PARTIE PROFIL */
 .bloc-header-profil {
     display: flex;
-    align-items: center;
-    font-weight: bold;
     justify-content: center;
+    align-items: center;
     width: 33%;
     height: 90%;
+}
+
+.bloc-header-profil div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bloc-header-profil a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;height: 100%;
     color: #ffff;
     text-decoration: none;
 }
