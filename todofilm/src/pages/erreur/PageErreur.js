@@ -5,10 +5,10 @@ import logoErreur from '../../images/erreur_404.png'
 
 const PageErreur = () => {
     return (
-        <div className="bloc-erreur">
+        <div className="bloc-central">
             <Header />
 
-            <div className="bloc-erreur-contenu background-yellow">
+            <div className="bloc-central-contenu background-yellow">
                 <div className="bloc-erreur-text">
                     <h1>Erreur 404</h1>
                     <p>La page que vous cherchez n'existe pas... 😕</p>

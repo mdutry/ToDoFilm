@@ -4,15 +4,11 @@ import ProfilUser from './ProfilUser'
 
 const PageProfile = () => {
     return (
-        <div className="bloc-erreur">
+        <div className="bloc-central">
             <Header />
-
-            <div className="bloc-erreur-contenu background-yellow">
-
+            <div className="bloc-central-contenu background-yellow">
                 <ProfilUser />
-
             </div>
-
         </div>
     )
 }
