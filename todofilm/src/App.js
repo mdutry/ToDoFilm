@@ -20,7 +20,7 @@ function App() {
         <Route path="/inscription" component={Inscription} />
         <Route path="/mot-de-passe-oublie" component={MdPOublie} />
         <Route path="/recherche" component={PageRecherche} />
-        <Route path="/film" component={PageFilm} />
+        <Route path="/film/:id" component={PageFilm} />
         <Route path="/profil" component={PageProfile} />
         <Route path="/wishlist" component={PageWishlist} />
         <Route component={PageErreur} />
