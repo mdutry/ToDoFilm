@@ -1,0 +1,36 @@
+.bloc-film-notes-details {
+    width: 47.5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bloc-film-notes-critiqueAvis {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bloc-film-notes-details p, .bloc-film-notes-critiqueAvis p {
+    margin-block-end: 0;
+    margin-block-start: 0;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.bloc-film-notes-input {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.bloc-film-notes-input input {
+    margin-right: 1em;
+}
+
+.bloc-film-notes-input small {
+    color: #660099;
+}
+
+.bloc-film-notes-critiqueAvis input {
+    width: 50%;
+}

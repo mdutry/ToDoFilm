@@ -1,0 +1,18 @@
+.bloc-identite {
+    display: flex;
+    margin-bottom: 0.5em;
+}
+
+.bloc-identite-notes {
+    display: flex;
+}
+
+.identite-span {
+    color: #BA80D8;
+    margin-right: 0.5em;
+}
+
+.identite-par {
+    margin-block-end: 0;
+    margin-block-start: 0;
+}

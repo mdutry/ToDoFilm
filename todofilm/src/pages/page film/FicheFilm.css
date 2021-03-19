@@ -1,0 +1,127 @@
+/* BLOC FILM PRINCIPAL */
+.bloc-film {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+
+/* BLOC HAUT AVEC AFFICHE ET DÉTAILS */
+.bloc-film-haut {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5em;
+}
+
+
+/* AFFICHE */
+.bloc-film-poster {
+    width: 30%;
+}
+
+.bloc-film-poster img {
+    width: 100%;
+}
+
+
+/* DÉTAILS FILM */
+.bloc-film-details {
+    width: 65%;
+}
+
+.bloc-film-titre {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.bloc-film-titre img {
+    width: 10%;
+    margin-right: 1em;
+}
+
+.bloc-film-titre h1 {
+    margin-block-end: 0;
+}
+
+.notes-detail-film {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+}
+
+.bloc-film-details a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 50%;
+    font-weight: bold;
+    background: #660099;
+    color: white;
+}
+
+
+/* BLOC CRITIQUE DE PRESSE */
+.bloc-film-critique {
+    margin-bottom: 1.5em;
+}
+
+.bloc-film-critique h2 {
+    margin-block-end: 0em;
+}
+
+.bloc-film-critique div p {
+    margin-block-start: 0.5em;
+}
+
+
+/* BLOC AVIS SPECTATEURS */
+.bloc-film-avis a {
+    color: #660099;
+}
+
+.bloc-film-avis h2 {
+    margin-block-end: 0em;
+}
+
+.bloc-film-avis div p {
+    margin-block-start: 0.5em;
+}
+
+.bloc-avatar-avis {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 1em;
+}
+
+.avatar-spectateur {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.avatar-spectateur img {
+    width: 95%;
+}
+
+.avatar-spectateur p {
+    margin-block-start: 0.5em;
+}
+
+.avis-spectateur {
+    width: 83%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
