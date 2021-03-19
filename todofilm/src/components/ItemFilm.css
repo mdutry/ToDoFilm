@@ -4,13 +4,18 @@
     margin-left: 4%;
 }
 
-.bloc-item-film > img {
+.bloc-item-film a {
+    text-decoration: none;
+}
+
+.bloc-item-film a > img {
     width: 90%;
 }
 
 .bloc-item-film-title {
     display: flex;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .bloc-item-film-title > img {
@@ -21,4 +26,6 @@
 
 .bloc-item-film p {
     margin-block-start: 0;
+    margin-block-end: 0;
+    color: black;
 }

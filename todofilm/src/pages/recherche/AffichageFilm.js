@@ -15,6 +15,7 @@ class AffichageFilm extends Component {
                 {movieList.map(({title, id, poster}) => (
                     <ItemFilm
                         key={id}
+                        id={id}
                         poster={poster}
                         title={title}
                     />
