@@ -37,7 +37,7 @@ class InputComponent extends Component {
         }
 
         // NOM
-        if (id === 'nom-input') {
+        else if (id === 'nom-input') {
             const textRegExp = /^[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ_-\s]{2,}$/
             let testText = textRegExp.test(e.target.value)
             if (testText) {

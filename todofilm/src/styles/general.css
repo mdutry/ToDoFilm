@@ -46,6 +46,10 @@ h2 {
     justify-content: flex-end;
 }
 
+.bloc-identify-button a {
+    text-decoration: none;
+}
+
 .bloc-identify-button button {
     width: 50%;
     height: 2em;
