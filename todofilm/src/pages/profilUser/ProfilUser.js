@@ -2,17 +2,21 @@ import React, {Component} from 'react'
 import './ProfilUser.css'
 import avatar from '../../images/avatar.png';
 import coeur_blanc from '../../images/coeur_blanc.png';
-import {datasUser} from '../../datas/datasUser'
 import Identite from '../../components/Identite'
 import { Link } from 'react-router-dom';
+import {DatasUserContext} from '../../context/DatasUserContext'
 
 class ProfilUser extends Component {
 
     modifInformation = () => {
         prompt("Prénom")
     }
+
+    static contextType = DatasUserContext;
     
     render () {
+
+        const {prenom, nom, email} = this.context;
 
         return (
         <div className='bloc-profilUser'>
@@ -26,10 +30,10 @@ class ProfilUser extends Component {
             </div>
 
             <div className="bloc-profilUser-right">
-                <h1>Hi, {datasUser.prenom}</h1>
-                <Identite label="Prénom : " data={datasUser.prenom} />
-                <Identite label="Nom : " data={datasUser.nom} />
-                <Identite label="Adresse mail : " data={datasUser.email} />
+                <h1>Hi, {prenom}</h1>
+                <Identite label="Prénom : " data={prenom} />
+                <Identite label="Nom : " data={nom} />
+                <Identite label="Adresse mail : " data={email} />
                 <Link onClick={this.modifInformation} className="input-modif-info">Modifier les informations</Link>
                 <Link to='/' className="input-deconnexion">Déconnexion</Link>
             </div>

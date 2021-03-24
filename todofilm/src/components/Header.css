@@ -69,7 +69,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;height: 100%;
+    font-weight: bold;
+    height: 100%;
     color: #ffff;
     text-decoration: none;
 }

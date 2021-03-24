@@ -2,9 +2,8 @@ import React, {Component} from 'react'
 import InputComponent from '../../components/InputComponent'
 import Logo from '../../components/Logo'
 import '../../styles/general.css'
-import {datasUser} from '../../datas/datasUser'
-import {datasInputComponent} from '../../datas/datasInputComponent'
 import { Link } from 'react-router-dom';
+import {DatasUserContext} from '../../context/DatasUserContext'
 
 class Inscription extends Component {
 
@@ -46,14 +45,7 @@ class Inscription extends Component {
         }
     }
 
-    showData = () => {
-        datasUser.prenom = datasInputComponent.prenom
-        datasUser.nom = datasInputComponent.nom
-        datasUser.email = datasInputComponent.email
-        datasUser.password = datasInputComponent.password
-        console.log("Prénom : ", datasUser.prenom, "- Nom : ", datasUser.nom, 
-        "- Adresse mail : ", datasUser.email, "- Mot de passe : ", datasUser.password)
-    }
+    static contextType = DatasUserContext;
 
     render () {
 
@@ -61,6 +53,8 @@ class Inscription extends Component {
       
         const verifDisabled = (conditionPrenom === true && conditionNom === true && conditionEmail === true && conditionPasswordInit === true &&
         conditionPasswordVerif === true) ? false : true;
+
+        const {showData} = this.context;
 
         return (
             <div className='bloc-identify background-yellow'>
@@ -78,9 +72,12 @@ class Inscription extends Component {
                     <InputComponent id='passwordInit-input' placeholder='Mot de passe' type='password' recupData={this.recupData} />
                     <InputComponent id='passwordVerif-input' placeholder='Vérification mot de passe' type='password' recupData={this.recupData} />
 
-                    <Link to='/recherche' className='bloc-identify-button'>
-                        <button onClick={this.showData} disabled={verifDisabled}>Valider</button>
-                    </Link>
+                    <div className='bloc-identify-button'>
+                        <Link to='/recherche'>
+                            <button onClick={showData} disabled={verifDisabled}>Valider</button>
+                        </Link>
+                    </div>
+                    
                 </div>
             </div>
         );

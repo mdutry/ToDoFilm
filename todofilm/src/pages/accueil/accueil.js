@@ -15,15 +15,20 @@ function Accueil() {
             </div>
 
             <div className='bloc-identify-input'>
-                <Link to="/connexion" className="bloc-identify-link-input">
-                    <InputComponent type="button" value="Connexion"  />
-                </Link>
-                <Link to ="/inscription" className="bloc-identify-link-input">
-                    <InputComponent type="button" value="Inscription"  />
-                </Link>
-                <Link to="/mot-de-passe-oublie" className="bloc-identify-Mdpo">
-                    {informationText.MdP_Oublie}
-                </Link>
+                
+                <div className='bloc-identify-link'>
+                    <Link to='/connexion'>Connexion</Link>
+                </div>
+                
+                <div className='bloc-identify-link'>
+                    <Link to='/inscription'>Inscription</Link>
+                </div>
+
+                <div className="bloc-identify-Mdpo">
+                    <Link to="/mot-de-passe-oublie">
+                        {informationText.MdP_Oublie}
+                    </Link>
+                </div>
             </div>
         </div>
     )

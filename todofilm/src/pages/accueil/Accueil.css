@@ -1,8 +1,26 @@
-.bloc-identify-Mdpo {
+.bloc-identify-Mdpo a {
     color: #ba80d8;
 }
 
-.bloc-identify-link-input {
+.bloc-identify-link {
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.bloc-identify-link a {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5em;
+    font-size: 1.25em;
+    border-radius: 25px;
     text-decoration: none;
+    background: white;
+    border: 2px solid #660099;
+    box-shadow: 4px 4px 4px rgba(102, 0, 153, 0.25);
+    padding: 0 1.5em 0 1.5em;
+    margin-bottom: 1em;
+    color: #660099;
 }
