@@ -4,16 +4,27 @@ import Logo from '../../components/Logo';
 import '../../styles/general.css';
 import {datasUser} from '../../datas/datasUser'
 import {datasInputComponent} from '../../datas/datasInputComponent';
-
-import {informationText} from '../../datas/informationText'
 import { Link } from 'react-router-dom';
-
+import {informationText} from '../../datas/informationText'
+import './connexion.css';
 class connexion extends Component {
+
+
+
+    connexionDatas =()=> {
+        datasInputComponent.email=datasUser.email
+        datasInputComponent.password=datasUser.password
+       
+    }
     render() {
 
-    
+        
+        
         
         return(
+
+             
+            
             <div className='bloc-identify background-yellow'>
 
                 <div className='full-logo'>
@@ -21,19 +32,24 @@ class connexion extends Component {
                  </div>
 
                   <div className='bloc-identify-input'>
-                     <h1>Inscription</h1>
+                     <h1>Connexion</h1>
 
-                       <datasInputComponent id='email-input' placeholder='Adresse mail' type='email' recupData={this.recupData} />
+                       <InputComponent id='email-input' placeholder='Adresse mail' type='email'  />
 
-                       <datasInputComponent id='passwordInit-input' placeholder='Mot de passe' type='password' recupData={this.recupData} />
+                       <InputComponent id='passwordInit-input' placeholder='Mot de passe' type='password'  />
 
-                     <Link to="/mot-de-passe-oublie" className="bloc-identify-Mdpo">
+                  <div className="bloc-identify-Mdpo">
+                     <Link to="/mot-de-passe-oublie" >
                        {informationText.MdP_Oublie}
                      </Link>
+                     </div>
+                     {(datasInputComponent.email===datasUser.email &&  datasInputComponent.password===datasUser.password)?
+                        <Link to='/recherche' className='bloc-identify-button' >
+                       <button >Valider</button>
+                     </Link> :
+                      <button disabled>valider</button> 
+                      }
 
-                     <Link to='/connexion' className='bloc-identify-button'>
-                       <button onClick={this.showData} disabled={verifDisabled}>Valider</button>
-                     </Link>
                 </div>
             </div>    
         )
