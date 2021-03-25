@@ -18,10 +18,14 @@
     align-items: center;
 }
 
-.bloc-item-film-title > img {
+.bloc-item-film-title div {
     width: 15%;
     margin-left: 0.5em;
     margin-right: 0.5em;
+}
+
+.bloc-item-film-title img {
+    width: 100%;
 }
 
 .bloc-item-film p {

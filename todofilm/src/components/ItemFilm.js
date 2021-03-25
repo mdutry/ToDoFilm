@@ -6,6 +6,16 @@ import { Link } from 'react-router-dom'
 
 class ItemFilm extends Component {
 
+    state = {
+        srcCoeur: false
+    }
+
+    changeImage = () => {
+        this.setState({
+            srcCoeur: !this.state.srcCoeur
+        })
+    }
+
     render () {
 
         const {id, poster, title} = this.props
@@ -14,12 +24,20 @@ class ItemFilm extends Component {
             <div className="bloc-item-film">
                 <Link to={`/film/${id}`}>
                     <img key={id} src={poster} alt={`Affiche ${title}`} />
-                    
-                    <div className="bloc-item-film-title">
-                        <img src={coeurFalse} alt='coeur violet wishlist' />
-                        <p>{title}</p>
-                    </div>
                 </Link>
+                    
+                <div className="bloc-item-film-title">
+                    <div onClick={this.changeImage}>
+                        {
+                            this.state.srcCoeur ? <img src={coeurTrue} alt='coeur violet wishlist' />
+                            : <img src={coeurFalse} alt='coeur violet wishlist' />
+                        }
+                        
+                    </div>
+                    <Link to={`/film/${id}`}>
+                        <p>{title}</p>
+                    </Link>
+                </div>
             </div>
         )
     }
