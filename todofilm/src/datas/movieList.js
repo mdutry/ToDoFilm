@@ -4,7 +4,7 @@ export const movieList = [
       id:"1fg",
       year: "1994",
       released: "5 octobre 1994",
-      runtime: "140 min",
+      runtime: 140,
       genre: [
         "Romance",
         "Drame",
@@ -85,7 +85,7 @@ export const movieList = [
       id:"2llv",
       year: "2000",
       released: "1 mars 2000",
-      runtime: "189 min",
+      runtime: 189,
       genre: [
         "Fantastique",
         "Policier"
@@ -165,7 +165,7 @@ export const movieList = [
       id:"3llds",
       year: "1994",
       released: "2 mars 1994",
-      runtime: "195 min",
+      runtime: 195,
       genre: [
         "Historique",
         "Guerre"
@@ -245,7 +245,7 @@ export const movieList = [
       id:"4lp",
       year: "1972",
       released: "18 octobre 1972",
-      runtime: "175 min",
+      runtime: 175,
       genre: [
         "Policier",
         "Drame"
@@ -325,7 +325,7 @@ export const movieList = [
       id:"5lp2p",
       year: "1975",
       released: "27 août 1975",
-      runtime: "200 min",
+      runtime: 200,
       genre: [
         "Policier",
         "Drame"
@@ -405,7 +405,7 @@ export const movieList = [
       id:"6lp3p",
       year: "1991",
       released: "27 mars 1991",
-      runtime: "175 min",
+      runtime: 175,
       genre: [
         "Policier",
         "Drame"
@@ -484,7 +484,7 @@ export const movieList = [
       id:"7lsdalrdr",
       year: "2003",
       released: "17 décembre 2003",
-      runtime: "201 min",
+      runtime: 201,
       genre: [
         "Fantastique",
         "Aventure"
@@ -565,7 +565,7 @@ export const movieList = [
       id:"8lsdalcda",
       year: "2001",
       released: "19 décembre 2001",
-      runtime: "198 min",
+      runtime: 198,
       genre: [
         "Fantastique",
         "Aventure"
@@ -646,7 +646,7 @@ export const movieList = [
       id:"9lsdal2t",
       year: "2003",
       released: "17 décembre 2003",
-      runtime: "199 min",
+      runtime: 189,
       genre: [
         "Fantastique",
         "Aventure"
@@ -727,7 +727,7 @@ export const movieList = [
       id:"10tdk",
       year: "2008",
       released: "13 août 2008",
-      runtime: "152 min",
+      runtime: 152,
       genre: [
         "Action",
         "Thriller"
@@ -808,7 +808,7 @@ export const movieList = [
       id:"11yn",
       year: "2016",
       released: "28 décembre 2016",
-      runtime: "110 min",
+      runtime: 110,
       genre: [
         "Animation",
         "Fantastique"
@@ -886,7 +886,7 @@ export const movieList = [
       id:"12sam",
       year: "2001",
       released: "17 janvier 2001",
-      runtime: "143 min",
+      runtime: 143,
       genre: [
         "Aventure",
         "Drame"
@@ -964,7 +964,7 @@ export const movieList = [
       id:"13gt",
       year: "2009",
       released: "25 février 2009",
-      runtime: "116 min",
+      runtime: 116,
       genre: [
         "Drame",
         "Thriller"
@@ -1042,7 +1042,7 @@ export const movieList = [
       id:"14du",
       year: "2013",
       released: "16 janvier 2013",
-      runtime: "164 min",
+      runtime: 164,
       genre: "Western",
       director: "Quentin Tarantino",
       actors: [
@@ -1117,7 +1117,7 @@ export const movieList = [
       id:"15lrl",
       year: "1994",
       released: "23 novembre 1994",
-      runtime: "89 min",
+      runtime: 89,
       genre: [
         "Animation",
         "Aventure",
@@ -1199,7 +1199,7 @@ export const movieList = [
       id:"16pf",
       year: "1994",
       released: "26 octobre 1994",
-      runtime: "149 min",
+      runtime: 149,
       genre: [
         "Policier",
         "Thriller"
@@ -1277,7 +1277,7 @@ export const movieList = [
       id:"17ieufea",
       year: "1984",
       released: "23 mai 1984",
-      runtime: "251 min",
+      runtime: 251,
       genre: [
         "Drame",
         "Policier"
@@ -1358,7 +1358,7 @@ export const movieList = [
       id:"18g",
       year: "2000",
       released: "20 juin 2000",
-      runtime: "155 min",
+      runtime: 155,
       genre: [
         "Action",
         "Aventure"
@@ -1439,7 +1439,7 @@ export const movieList = [
       id:"19p",
       year: "2019",
       released: "5 juin 2019",
-      runtime: "132 min",
+      runtime: 132,
       genre: "Thriller",
       director: "Bong Joon Ho",
       actors: [
@@ -1514,7 +1514,7 @@ export const movieList = [
       id:"20l8s",
       year: "2016",
       released: "6 janvier 2016",
-      runtime: "168 min",
+      runtime: 168,
       genre: "Western",
       director: "Quentin Tarantino",
       actors: [
@@ -1589,7 +1589,7 @@ export const movieList = [
       id:"21i",
       year: "2014",
       released: "5 novembre 2014",
-      runtime: "169 min",
+      runtime: 169,
       genre: [
         "Science-fiction",
         "Drame"
@@ -1670,7 +1670,7 @@ export const movieList = [
       id:"22c",
       year: "2017",
       released: "15 novembre 2017",
-      runtime: "165 min",
+      runtime: 165,
       genre: [
         "Animation",
         "Fantastique",

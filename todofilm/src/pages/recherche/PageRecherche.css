@@ -1,0 +1,31 @@
+/* BLOC PAGE recherche */
+.page-recherche {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* BLOC RECHERCHE */
+.bloc-recherche {
+    background-color: #EABFFF;
+    width: 25%;
+}
+
+.bloc-recherche-component {
+    margin-left: 2.5%;
+    width: 80%;
+    position: fixed;
+    width: 20%;
+}
+
+.bloc-recherche-component h2, .bloc-recherche-component h3 {
+    margin-block-end: 0.5em;
+    text-align: center;
+}
+
+/* BLOC AFFICHAGE FILM */
+.bloc-affichage-film {
+    margin-top: 2em;
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+}
