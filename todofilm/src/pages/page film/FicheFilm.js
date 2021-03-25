@@ -4,16 +4,27 @@ import FilmNotes from '../../components/FilmNotes'
 import FilmAvis from './FilmAvis'
 import FilmCritique from './FilmCritique'
 import './FicheFilm.css'
-import coeur_violet from '../../images/coeur_violet.png';
-import coeur_violet_clair from '../../images/coeur_violet_clair.png';
+import coeurTrue from '../../images/coeur_violet.png';
+import coeurFalse from '../../images/coeur_violet_clair.png';
 import {WishlistContext} from '../../context/WishlistContext'
 
 class FicheFilm extends Component {
+
+    state = {
+        srcCoeur: false
+    }
+
+    changeImage = () => {
+        this.setState({
+            srcCoeur: !this.state.srcCoeur
+        })
+    }
 
     static contextType = WishlistContext;
     
     render () {
 
+        // console.log(this.context.addMovie(this.props.data.id))
         const {data} = this.props
         const {liste, addMovie, removeMovie} = this.context;
 
@@ -28,20 +39,13 @@ class FicheFilm extends Component {
 
                     <div className='bloc-film-details'>
                         <div className='bloc-film-titre'>
-
-                            {
-                                (liste.indexOf(data.id) != -1)
-                                    ? <img
-                                        src={coeur_violet}
-                                        onClick={(data.id) => removeMovie(data.id)}
-                                        alt='coeur_violet'
-                                    />
-                                    : <img
-                                        src={coeur_violet_clair}
-                                        onClick={(data.id) => addMovie(data.id)}
-                                        alt='coeur_violet_clair'
-                                    />
-                            }
+                            <div onClick={this.changeImage}>
+                                {
+                                    this.state.srcCoeur ? <img src={coeurTrue} alt='coeur violet wishlist' />
+                                    : <img src={coeurFalse} alt='coeur violet wishlist' />
+                                }
+                                
+                            </div>
                             
                             <h1>{data.title}</h1>
                         </div>

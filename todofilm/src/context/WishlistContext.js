@@ -24,7 +24,7 @@ class WishlistContextProvider extends Component {
 
     render() { 
         return (
-            <WishlistContext.Provider value={{...this.state, addMovie: this.addMovie(), removeMovie: this.removeMovie()}}>
+            <WishlistContext.Provider value={{...this.state, addMovie: this.addMovie, removeMovie: this.removeMovie}}>
                 {this.props.children}
             </WishlistContext.Provider>
         );
