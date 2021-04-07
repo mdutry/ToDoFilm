@@ -1,38 +1,34 @@
-import React, {Component} from 'react'
+import React, { useState, useContext } from 'react'
 import './InputComponent.css'
 import {informationText} from '../datas/informationText'
-import {datasInputComponent} from '../datas/datasInputComponent'
+import {DatasInputContext} from '../context/DatasInputContext'
 
-class InputComponent extends Component {
+function InputComponent({id, placeholder, type, value}) {
 
-    state = {
-        value: '',
-        smallValue: '',
-        classSmallStyle: ''
-    }
+    const [inputValue, setInputValue] = useState('')
+    const [smallValue, setSmallValue] = useState('')
+    const [classSmallStyle, setClassSmallStyle] = useState('')
 
-    conditionInput = (e) => {
-        const {id, recupData} = this.props
+    const datasInputContext = useContext(DatasInputContext)
 
-        this.setState({ value: e.target.value });
+    const conditionInput = (e) => {
+
+        setInputValue(e.target.value)
         // PRENOM
         if (id === "prenom-input") {
             const textRegExp = /^[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ_-\s]{2,}$/;
             let testText = textRegExp.test(e.target.value);
             if (testText) {
-                this.setState({
-                    smallValue: informationText.OK,
-                    classSmallStyle: "greenText",
-                });
-                datasInputComponent.prenom = e.target.value
-                recupData('prenom', true);
+                setSmallValue(informationText.OK)
+                setClassSmallStyle("greenText")
+                datasInputContext.prenom = e.target.value
+                datasInputContext.functionRecupValue('prenom', e.target.value)
+                datasInputContext.functionDisabledButton('prenom', true)
             } else {
-                this.setState({
-                    smallValue: informationText.ERROR_InputText,
-                    classSmallStyle: "redText",
-                });
-                datasInputComponent.prenom = e.target.value
-                recupData('prenom', false);
+                setSmallValue(informationText.ERROR_InputText)
+                setClassSmallStyle("redText")
+                datasInputContext.prenom = e.target.value
+                datasInputContext.functionDisabledButton('prenom', false)
             }
         }
 
@@ -41,18 +37,16 @@ class InputComponent extends Component {
             const textRegExp = /^[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ_-\s]{2,}$/
             let testText = textRegExp.test(e.target.value)
             if (testText) {
-                this.setState({
-                    smallValue: informationText.OK,
-                    classSmallStyle:'greenText'
-                })
-                datasInputComponent.nom = e.target.value
-                recupData('nom', true);
+                setSmallValue(informationText.OK)
+                setClassSmallStyle("greenText")
+                datasInputContext.nom = e.target.value
+                datasInputContext.functionRecupValue('nom', e.target.value)
+                datasInputContext.functionDisabledButton('nom', true)
             } else {
-                this.setState({
-                    smallValue: informationText.ERROR_InputText,
-                    classSmallStyle:'redText'})
-                datasInputComponent.nom = e.target.value
-                recupData('nom', false);
+                setSmallValue(informationText.ERROR_InputText)
+                setClassSmallStyle("redText")
+                datasInputContext.nom = e.target.value
+                datasInputContext.functionDisabledButton('nom', false)
             }
         }
 
@@ -61,18 +55,16 @@ class InputComponent extends Component {
             const emailRegExp = /^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$/
             let testMail = emailRegExp.test(e.target.value)
             if (testMail) {
-                this.setState({
-                    smallValue: informationText.OK_Mail,
-                    classSmallStyle:'greenText'
-                })
-                datasInputComponent.email = e.target.value
-                recupData('email', true);
+                setSmallValue(informationText.OK_Mail)
+                setClassSmallStyle("greenText")
+                datasInputContext.email = e.target.value
+                datasInputContext.functionRecupValue('email', e.target.value)
+                datasInputContext.functionDisabledButton('email', true)
             } else {
-                this.setState({
-                    smallValue: informationText.ERROR_Mail,
-                    classSmallStyle:'redText'})
-                datasInputComponent.email = e.target.value
-                recupData('email', false);
+                setSmallValue(informationText.ERROR_Mail)
+                setClassSmallStyle("redText")
+                datasInputContext.email = e.target.value
+                datasInputContext.functionDisabledButton('email', false)
             }
         }
 
@@ -81,60 +73,51 @@ class InputComponent extends Component {
             const passwordRegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\W]{8,}$/
             let testPassword = passwordRegExp.test(e.target.value)
             if (testPassword) {
-                this.setState({
-                    smallValue: informationText.OK_Password,
-                    classSmallStyle:'greenText'
-                })
-                datasInputComponent.password = e.target.value
-                recupData('passwordInit', true);
+                setSmallValue(informationText.OK_Password)
+                setClassSmallStyle("greenText")
+                datasInputContext.password = e.target.value
+                datasInputContext.functionRecupValue('passwordInit', e.target.value)
+                datasInputContext.functionDisabledButton('passwordInit', true)
             } else {
-                this.setState({
-                    smallValue: informationText.ERROR_PasswordInit,
-                    classSmallStyle:'redText'})
-                datasInputComponent.password = e.target.value
-                recupData('passwordInit', false);
+                setSmallValue(informationText.ERROR_PasswordInit)
+                setClassSmallStyle("redText")
+                datasInputContext.password = e.target.value
+                datasInputContext.functionDisabledButton('passwordInit', false)
             }
         }
         
         // PASSWORD VERIF
         else if (id === 'passwordVerif-input') {
-            if (e.target.value === datasInputComponent.password) {
-                this.setState({
-                    smallValue: informationText.OK,
-                    classSmallStyle:'greenText'
-                })
-                recupData('passwordVerif', true);
+            if (e.target.value === datasInputContext.password) {
+                setSmallValue(informationText.OK)
+                setClassSmallStyle("greenText")
+                datasInputContext.functionDisabledButton('passwordVerif', true)
             } else {
-                this.setState({
-                    smallValue: informationText.ERROR_PasswordVerif,
-                    classSmallStyle:'redText'})
-                recupData('passwordVerif', false);
+                setSmallValue(informationText.ERROR_PasswordVerif)
+                setClassSmallStyle("redText")
+                datasInputContext.functionDisabledButton('passwordVerif', false)
             }
         }
     }
-    
-    render () {
-        const {placeholder, type, value} = this.props
 
-        const input = (type === "button") ? 
-        (<input 
-            type={type}
-            value={value}
-        />) : 
-        (<input 
-            type={type}
-            placeholder={placeholder}
-            value={this.state.value}
-            onChange={this.conditionInput}
-        />)
+    const input = (type === "button") ? 
+    (<input 
+        type={type}
+        value={value}
+    />) : 
+    (<input 
+        type={type}
+        placeholder={placeholder}
+        value={inputValue}
+        onChange={conditionInput}
+    />)
 
-        return (
-        <div className='input-style'>
-            {input}
-            <small className={this.state.classSmallStyle}>{this.state.smallValue}</small>
-        </div>
-        );
-    }
+    return (
+    <div className='input-style'>
+        {input}
+        <small className={classSmallStyle}>{smallValue}</small>
+    </div>
+    );
 }
 
 export default InputComponent
