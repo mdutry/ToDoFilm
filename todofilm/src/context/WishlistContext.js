@@ -8,13 +8,12 @@ class WishlistContextProvider extends Component {
     }
 
     addMovie = (target) => {
-        this.setState({
-            liste: this.state.liste.concat(target)
-        })
+        this.state.liste.push(target)
+        console.log('this.state.liste', this.state.liste)
     }
 
     removeMovie = (target) => {
-        const array = [this.state.liste]
+        const array = this.state.liste
         const index = array.indexOf(target)
         array.splice(index, 1)
         this.setState({
@@ -22,7 +21,7 @@ class WishlistContextProvider extends Component {
         })
     }
 
-    render() { 
+    render() {
         return (
             <WishlistContext.Provider value={{...this.state, addMovie: this.addMovie, removeMovie: this.removeMovie}}>
                 {this.props.children}
