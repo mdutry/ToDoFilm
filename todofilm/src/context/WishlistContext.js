@@ -9,7 +9,6 @@ class WishlistContextProvider extends Component {
 
     addMovie = (target) => {
         this.state.liste.push(target)
-        console.log('this.state.liste', this.state.liste)
     }
 
     removeMovie = (target) => {

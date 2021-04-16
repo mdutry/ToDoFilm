@@ -1,0 +1,13 @@
+.bloc-wishlist {
+
+}
+
+.bloc-wishlist-top {
+    
+}
+
+.bloc-wishlist-movies {
+    margin-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+}
