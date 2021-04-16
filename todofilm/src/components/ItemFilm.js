@@ -5,7 +5,7 @@ import coeurTrue from '../images/coeur_violet.png'
 import { Link } from 'react-router-dom'
 import {WishlistContext} from '../context/WishlistContext'
 
-function ItemFilm({id, poster, title}) {
+function ItemFilm({id, poster, title, numb}) {
 
     const [srcCoeur, setScrCoeur] = useState(false)
     const wishlistContext = useContext(WishlistContext)
@@ -22,7 +22,7 @@ function ItemFilm({id, poster, title}) {
     }
 
     return (
-        <div className="bloc-item-film">
+        <div className={`bloc-item-film-${numb}`}>
             <Link to={`/film/${id}`}>
                 <img key={id} src={poster} alt={`Affiche ${title}`} />
             </Link>

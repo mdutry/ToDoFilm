@@ -1,66 +1,193 @@
-import React, {Component} from 'react'
-import InputFiltre from '../../components/InputFiltre'
-import { movieList } from '../../datas/movieList'
-import {datasInputComponent} from '../../datas/datasInputComponent'
+import React, { useState, useContext, useEffect } from 'react'
+import {DatasInputContext} from '../../context/DatasInputContext'
 import './PageRecherche.css';
+import { optionYear, optionGenre, optionCountry } from './RechercheFunctions'
 
-class Recherche extends Component {
-    
-    render () {
-        // FILTRE AVES LES DIFFÉRENTES ANNÉES
-        const selectYears = movieList.reduce(
-            (acc, movie) =>
-                acc.includes(movie.year) ? acc : acc.concat(movie.year), []
-        )
-        selectYears.sort()
-       
-        // FILTRE AVES LES DIFFÉRENTS GENRES
-        const allGenre = movieList.reduce(
-            (acc, movie) =>
-                acc.includes(movie.genre) ? acc : acc.concat(movie.genre), []
-        )
-        const selectGenre = allGenre.reduce(
-            (acc, genre) =>
-                acc.includes(genre) ? acc : acc.concat(genre), []
-        )
-        selectGenre.sort()
-        
-        // FILTRE AVES LES DIFFÉRENTS PAYS
-        const allCountry = movieList.reduce(
-            (acc, movie) =>
-                acc.includes(movie.country) ? acc : acc.concat(movie.country), []
-        )
-        const selectCountry = allCountry.reduce(
-            (acc, movie) =>
-                acc.includes(movie) ? acc : acc.concat(movie), []
-        )
-        selectCountry.sort()
+function Recherche() {
 
-        return (
-            <div className='bloc-recherche'>
+    const datasInputContext = useContext(DatasInputContext)
+    const [stateTitle, setStateTitle] = useState('')
+    const [stateYear, setStateYear] = useState('')
+    const [stateGenre, setStateGenre] = useState('')
+    const [stateCountry, setStateCountry] = useState('')
+    const [stateActor, setStateActor] = useState('')
+    const [stateRealisateur, setStateRealisateur] = useState('')
+    const [stateDureeMin, setStateDureeMin] = useState('')
+    const [stateDureeMax, setStateDureeMax] = useState('')
+    const [stateNotePresse, setStateNotePresse] = useState('')
+    const [stateNoteSpectateur, setStateNoteSpectateur] = useState('')
+    const [isChecked, setIsChecked] = useState('')
 
-                <div className="bloc-recherche-component">
-                    <h2>Recherche</h2>
-                    <InputFiltre type='text' id='recherche' />
+    useEffect(() => {
+        setStateTitle(datasInputContext.filtreRecherche)
+        setStateYear(datasInputContext.filtreYear)
+        setStateGenre(datasInputContext.filtreGenre)
+        setStateCountry(datasInputContext.filtrePays)
+        setStateActor(datasInputContext.filtreActeur)
+        setStateRealisateur(datasInputContext.filtreRealisateur)
+        setStateDureeMin(datasInputContext.filtreDureeMin)
+        setStateDureeMax(datasInputContext.filtreDureeMax)
+        setStateNotePresse(datasInputContext.filtreNotePresse)
+        setStateNoteSpectateur(datasInputContext.filtreNoteSpectateur)
+        setIsChecked(datasInputContext.filtreRecompense)
+    }, [datasInputContext.remoteSearch])
 
-                    <h3>Filtres</h3>
+    const functionSearchMovie = () => {
+        datasInputContext.functionRecupValue('recherche', stateTitle)
+        datasInputContext.functionRecupValue('year', stateYear)
+        datasInputContext.functionRecupValue('genre', stateGenre)
+        datasInputContext.functionRecupValue('country', stateCountry)
+        datasInputContext.functionRecupValue('actor', stateActor)
+        datasInputContext.functionRecupValue('realisateur', stateRealisateur)
+        datasInputContext.functionRecupValue('duree-min', stateDureeMin)
+        datasInputContext.functionRecupValue('duree-max', stateDureeMax)
+        datasInputContext.functionRecupValue('note-presse', stateNotePresse)
+        datasInputContext.functionRecupValue('note-spectateur', stateNoteSpectateur)
+        datasInputContext.functionRecupValue('recompense', isChecked)
+        datasInputContext.remoteSearch = false
+    }
 
-                    <InputFiltre labelValue='Année :' type='select' id='year'  filtreOption={selectYears} />
-                    <InputFiltre labelValue='Genre :' type='select' id='genre' filtreOption={selectGenre} />
-                    <InputFiltre labelValue='Pays :' type='select' id='country' filtreOption={selectCountry} />
-                    <InputFiltre labelValue='Acteur :' type='text' id='actor' />
-                    <InputFiltre labelValue='Réalisateur :' type='text' id='realisateur' />
-                    <InputFiltre labelValue='Durée :' spanValue='min : ' min={0} max={300} step={1} type='range' id='duree-min' />
-                    <InputFiltre spanValue='max : ' type='range' max={300} step={1} id='duree-max' />
-                    <InputFiltre labelValue='Note :' smallValue={datasInputComponent.filtreNote} spanValue='/5 et +' min={0} step={0.1} max={5} type='range' id='note' />
-                    <InputFiltre labelValue='Film récompensé :' type='checkbox' id='recompense' />
+    const remoteSearchMovie = () => {
+        setStateTitle('')
+        setStateYear('')
+        setStateGenre('')
+        setStateCountry('')
+        setStateActor('')
+        setStateRealisateur('')
+        setStateDureeMin('')
+        setStateDureeMax('')
+        setStateNotePresse('')
+        setStateNoteSpectateur('')
+        setIsChecked('')
+        datasInputContext.remoteSearchMovie()
+    }
 
-                    <button>Valider</button>
+    return (
+        <div className='bloc-recherche'>
+
+            <div className="bloc-recherche-component">
+                <h2>Recherche</h2>
+                <div className="bloc-recherche-input-filtre">
+                    <input
+                        type='text'
+                        placeholder='Titre du film'
+                        value={stateTitle}
+                        onChange={(e) => setStateTitle(e.target.value)}
+                    />
                 </div>
 
+                <h3>Filtres</h3>
+
+                <div className="bloc-recherche-input-filtre">
+                    <label>Année :</label>
+                    <select value={stateYear} onChange={(e) => setStateYear(e.target.value)}>
+                        <option value=''>- Choisir une option -</option>
+                        {optionYear}
+                    </select>
+                </div>
+                
+                <div className="bloc-recherche-input-filtre">
+                    <label>Genre :</label>
+                    <select value={stateGenre} onChange={(e) => setStateGenre(e.target.value)}>
+                        <option value=''>- Choisir une option -</option>
+                        {optionGenre}
+                    </select>
+                </div>
+                
+                <div className="bloc-recherche-input-filtre">
+                    <label>Pays :</label>
+                    <select value={stateCountry} onChange={(e) => setStateCountry(e.target.value)}>
+                        <option value=''>- Choisir une option -</option>
+                        {optionCountry}
+                    </select>
+                </div>
+                
+                <div className="bloc-recherche-input-filtre">
+                    <label>Acteur :</label>
+                    <input
+                        type='text'
+                        value={stateActor}
+                        onChange={(e) => setStateActor(e.target.value)}
+                    />
+                </div>
+                
+                <div className="bloc-recherche-input-filtre">
+                    <label>Réalisateur :</label>
+                    <input
+                        type='text'
+                        value={stateRealisateur}
+                        onChange={(e) => setStateRealisateur(e.target.value)}
+                    />
+                </div>
+                
+                <div className="bloc-recherche-input-filtre">
+                    <label>Durée :</label>
+                    <small><span>min :</span>{stateDureeMin}</small>
+                    <input
+                        value={stateDureeMin}
+                        type='range'
+                        min={0}
+                        max={300}
+                        step={1}
+                        onChange={(e) => setStateDureeMin(e.target.value)}
+                    />
+                </div>
+                
+                <div className="bloc-recherche-input-filtre">
+                    <small><span>max :</span>{stateDureeMax}</small>
+                    <input
+                        value={stateDureeMax}
+                        type='range'
+                        min={stateDureeMin}
+                        max={300}
+                        step={1}
+                        onChange={(e) => setStateDureeMax(e.target.value)}
+                    />
+                </div>
+                
+                <div className="bloc-recherche-input-filtre">
+                    <label>Note :</label>
+                    <small>{`Presse : ${stateNotePresse}/5 et +`}</small>
+                    <input
+                        value={stateNotePresse}
+                        type='range'
+                        min={0}
+                        max={5}
+                        step={0.1}
+                        onChange={(e) => setStateNotePresse(e.target.value)}
+                    />
+                </div>
+                
+                <div className="bloc-recherche-input-filtre">
+                    <small>{`Spectateur : ${stateNoteSpectateur}/5 et +`}</small>
+                    <input
+                        value={stateNoteSpectateur}
+                        type='range'
+                        min={0}
+                        max={5}
+                        step={0.1}
+                        onChange={(e) => setStateNoteSpectateur(e.target.value)}
+                    />
+                </div>
+                
+                <div className="bloc-recherche-input-checkbox">
+                    <label>Film récompensé :</label>
+                    <input
+                        type='checkbox'
+                        checked={isChecked}
+                        onChange={(e) => setIsChecked(e.target.checked)}
+                    />
+                </div>
+
+                <div className='bloc-recherche-button'>
+                    <button onClick={functionSearchMovie}>Valider</button>
+                    <button onClick={remoteSearchMovie}>Réinitialiser</button>
+                </div>
+                
             </div>
-        );
-    }
+
+        </div>
+    );
 }
 
 export default Recherche

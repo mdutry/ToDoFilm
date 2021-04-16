@@ -8,13 +8,16 @@
 .bloc-recherche {
     background-color: #EABFFF;
     width: 25%;
+    display: flex;
+    justify-content: center;
+    /* height: 100vh; */
 }
 
 .bloc-recherche-component {
-    margin-left: 2.5%;
     width: 80%;
-    position: fixed;
-    width: 20%;
+    /* margin-left: 2.5%; */
+    /* position: fixed; */
+    /* width: 20%; */
 }
 
 .bloc-recherche-component h2, .bloc-recherche-component h3 {
@@ -22,10 +25,95 @@
     text-align: center;
 }
 
+.bloc-recherche-input-filtre {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 0.5em;
+    width: 100%;
+}
+
+.bloc-recherche-input-filtre select {
+    text-align: center;
+    border-width: 0;
+    border-radius: 1em;
+    height: 1.5em;
+    padding: 0 1em 0 1em;
+}
+
+.bloc-recherche-input-filtre input[type='text'] {
+    border: none;
+    border-radius: 1em;
+    height: 1.5em;
+    padding: 0 1em 0 1em;
+}
+
+.bloc-recherche-input-filtre > input::placeholder {
+    color: #BA80D8;
+}
+
+.bloc-recherche-input-checkbox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+.bloc-recherche-input-checkbox > input {
+    margin-left: 1em;
+}
+
+.bloc-recherche-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+.bloc-recherche-button button {
+    width: 47.5%;
+    height: 2em;
+    background-color: #660099;
+    border: none; 
+    border-radius: 2em;
+    color: white;
+    font-weight: bold;
+}
+
+
 /* BLOC AFFICHAGE FILM */
 .bloc-affichage-film {
     margin-top: 2em;
     width: 75%;
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.bloc-affichage-film-search {
+    width: 100%;
+    padding-left: 4%;
+    display: flex;
+    margin-bottom: 1em;
+}
+
+.affichage-film-search-item {
+    background: #FDFF9B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    width: auto;
+    border-radius: 2em;
+    margin-right: 2em;
+    padding: 0 1em 0 1em;
+}
+
+.bloc-affichage-film-item {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
     flex-wrap: wrap;
+    margin-top: 2em;
 }
