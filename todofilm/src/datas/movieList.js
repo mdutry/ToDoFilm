@@ -2071,7 +2071,7 @@ export const movieList = [
       released: "9 avril 2014",
       runtime: 139,
       genre: [
-        "Scince-fiction",
+        "Science-fiction",
         "Action",
         "Romance"
       ],

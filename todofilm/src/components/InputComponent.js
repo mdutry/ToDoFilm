@@ -21,7 +21,6 @@ function InputComponent({id, placeholder, type, value}) {
             if (testText) {
                 setSmallValue(informationText.OK)
                 setClassSmallStyle("greenText")
-                datasInputContext.prenom = e.target.value
                 datasInputContext.functionRecupValue('prenom', e.target.value)
                 datasInputContext.functionDisabledButton('prenom', true)
             } else {
@@ -39,7 +38,6 @@ function InputComponent({id, placeholder, type, value}) {
             if (testText) {
                 setSmallValue(informationText.OK)
                 setClassSmallStyle("greenText")
-                datasInputContext.nom = e.target.value
                 datasInputContext.functionRecupValue('nom', e.target.value)
                 datasInputContext.functionDisabledButton('nom', true)
             } else {
@@ -57,7 +55,6 @@ function InputComponent({id, placeholder, type, value}) {
             if (testMail) {
                 setSmallValue(informationText.OK_Mail)
                 setClassSmallStyle("greenText")
-                datasInputContext.email = e.target.value
                 datasInputContext.functionRecupValue('email', e.target.value)
                 datasInputContext.functionDisabledButton('email', true)
             } else {
@@ -75,7 +72,6 @@ function InputComponent({id, placeholder, type, value}) {
             if (testPassword) {
                 setSmallValue(informationText.OK_Password)
                 setClassSmallStyle("greenText")
-                datasInputContext.password = e.target.value
                 datasInputContext.functionRecupValue('passwordInit', e.target.value)
                 datasInputContext.functionDisabledButton('passwordInit', true)
             } else {
