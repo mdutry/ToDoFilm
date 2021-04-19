@@ -29,6 +29,7 @@
     margin-left: 0.5em;
     margin-right: 0.5em;
     align-self: flex-start;
+    cursor: pointer;
 }
 
 .bloc-item-film-title img {

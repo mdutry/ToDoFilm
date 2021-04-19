@@ -106,8 +106,6 @@ function AffichageFilm() {
 
                 {
                     (filtreRecherche !== '' || filtreYear !== '' || filtreGenre !== '' || filtrePays !== '' || filtreActeur !== '' || filtreRealisateur !== '' || filtreDureeMin !== '' || filtreDureeMax !== '' || filtreNotePresse !== '' || filtreNoteSpectateur !== '' || filtreRecompense !== '') ?
-                    // console.log(searchMovieFiltre)
-                    // FAIRE UN 2è ..... ? ... : ...   pour vide ou non vide ???????
                     searchMovieFiltre.map(({title, id, poster}) => (
                         <ItemFilm
                             key={id}

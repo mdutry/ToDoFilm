@@ -10,14 +10,10 @@
     width: 25%;
     display: flex;
     justify-content: center;
-    /* height: 100vh; */
 }
 
 .bloc-recherche-component {
     width: 80%;
-    /* margin-left: 2.5%; */
-    /* position: fixed; */
-    /* width: 20%; */
 }
 
 .bloc-recherche-component h2, .bloc-recherche-component h3 {
@@ -79,6 +75,7 @@
     border-radius: 2em;
     color: white;
     font-weight: bold;
+    cursor: pointer;
 }
 
 
