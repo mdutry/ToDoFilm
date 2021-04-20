@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo_ToDoFilm_blanc from '../images/logo_ToDoFilm_blanc.png';
 import avatar from '../images/avatar.png';
@@ -7,13 +7,11 @@ import './Header.css';
 import {DatasUserContext} from '../context/DatasUserContext'
 
 
-class Header extends Component {
+function Header() {
 
-   static contextType = DatasUserContext;
+   const {prenom} = useContext(DatasUserContext)
 
-   render () {
-      const {prenom} = this.context;
-      return (
+   return (
       <div className='bloc-header'>
 
          <div className='bloc-header-logo'>
@@ -37,7 +35,7 @@ class Header extends Component {
          </div>
 
       </div>
-   )}
+   )
 }
 
 export default Header; 
