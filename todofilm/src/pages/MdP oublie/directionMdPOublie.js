@@ -2,13 +2,12 @@ import React, {useContext } from 'react';
 import {DatasInputContext} from '../../context/DatasInputContext';
 import { Link } from 'react-router-dom';
 import MdPOublie from './MdPOublie';
-​
- function directionMdPOublie () {
+
+function directionMdPOublie () {
     
-   const DatasInputContext = useContext(DatasInputContext)  
-​
+   const DatasInputContext = useContext(DatasInputContext)
    
-    return (
+   return (
         <div>
                             {(DatasInputContext.email=== DatasUserContext.email )&& usercontext.password('') } 
 ​
@@ -21,5 +20,5 @@ import MdPOublie from './MdPOublie';
         )
         
     }
-​
-export default directionMdPOublie;
+    
+    export default directionMdPOublie;
