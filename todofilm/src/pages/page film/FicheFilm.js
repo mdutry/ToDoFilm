@@ -16,6 +16,8 @@ function FicheFilm({data}) {
 
     const wishlistContext = useContext(WishlistContext);
 
+    const released = new Date(data.released)
+
     const changeImage = () => {
         setSrcCoeur(!srcCoeur)
         
@@ -57,7 +59,7 @@ function FicheFilm({data}) {
                         
                         <h1>{data.title}</h1>
                     </div>
-                    <Identite label='Date de sortie : ' data={data.released} />
+                    <Identite label='Date de sortie : ' data={new Intl.DateTimeFormat('fr-FR').format(released)} />
                     <Identite label='Durée : ' data={`${data.runtime} mn`} />
                     <Identite label='Genre : ' data={data.genre} />
                     <Identite label='De ' data={data.director} />
