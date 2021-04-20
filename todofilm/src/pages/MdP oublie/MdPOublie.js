@@ -4,7 +4,7 @@ import Logo from '../../components/Logo';
 import '../../styles/general.css';
 import {DatasUserContext} from '../../context/DatasUserContext';
 import {DatasInputContext} from '../../context/DatasInputContext';
-import directionMdPOublie from './directionMdPOublie';
+import DirectionMdPOublie from './DirectionMdPOublie';
 import { Link } from 'react-router-dom';
 import {informationText} from '../../datas/informationText';
   
@@ -27,7 +27,7 @@ function MdPOublie () {
                                    <InputComponent id='email-input' placeholder='Adresse mail' type='email'  />
 ​
                                       {(datasInputContext.email=== datasUserContext.email)?
-                         <Link to='/' className='bloc-identify-button button' id='button-MdPOublie' >
+                         <Link to='/connexion' className='bloc-identify-button button' id='button-MdPOublie' >
                                <button >Valider</button>
                          </Link> :
                                   <button disabled>valider</button> 
