@@ -14,12 +14,17 @@ function Wishlist() {
         wishlistMovies.push(movieList.find(item => item.id === id)
     )))
 
-    const wishListMoviesSortiePlus = wishlistMovies.sort((a, b) => new Date(a.released) - new Date(b.released))
-    const wishListMoviesSortieMoins = wishlistMovies.sort((a, b) => new Date(b.released) - new Date(a.released))
-    const wishListMoviesDureePlus = wishlistMovies.sort((a, b) => a.runtime - b.runtime)
-    const wishListMoviesDureeMoins = wishlistMovies.sort((a, b) => b.runtime - a.runtime)
-    console.log('Film du + long au plus + court', wishListMoviesDureePlus)
-    console.log('Film du + court au plus + long', wishListMoviesDureeMoins)
+    const wishListMoviesSortieMoins = [].concat(wishlistMovies)
+    wishListMoviesSortieMoins.sort((a, b) => new Date(a.released) - new Date(b.released))
+
+    const wishListMoviesSortiePlus = [].concat(wishlistMovies)
+    wishListMoviesSortiePlus.sort((a, b) => new Date(b.released) - new Date(a.released))
+
+    const wishListMoviesDureePlus = [].concat(wishlistMovies)
+    wishListMoviesDureePlus.sort((a, b) => a.runtime - b.runtime)
+
+    const wishListMoviesDureeMoins = [].concat(wishlistMovies)
+    wishListMoviesDureeMoins.sort((a, b) => b.runtime - a.runtime)
 
     return (
         <div className='bloc-wishlist'>
@@ -85,21 +90,8 @@ function Wishlist() {
                                 numb={3}
                             />
                         ))
-
-                    // wishlistMovies.map(movie => (
-                    //     <ItemFilm
-                    //         key={movie.id}
-                    //         id={movie.id}
-                    //         poster={movie.poster}
-                    //         title={movie.title}
-                    //         numb={3}
-                    //     />
-                    // ))
                 }
             </div>
-            
-
-            
         </div>
     )
 }
