@@ -37,17 +37,9 @@
 }
 
 .bloc-film-titre div {
-<<<<<<< HEAD
-    width: 10%;
-=======
     width: 15%;
->>>>>>> e77373abaf2092dc019cfcd9ce3b8e31e076d35b
     margin-right: 1em;
     cursor: pointer;
-}
-
-.bloc-film-titre div img {
-    width: 100%;
 }
 
 .bloc-film-titre div img {

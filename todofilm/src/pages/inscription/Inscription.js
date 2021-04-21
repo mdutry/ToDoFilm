@@ -47,7 +47,7 @@ function Inscription() {
                 <InputComponent id='passwordVerif-input' placeholder='Vérification mot de passe' type='password' />
 
                 <div className='bloc-identify-button'>
-                    <Link to='/recherche'>
+                    <Link to='/connexion'>
                         <button onClick={showData} disabled={verifDisabled} >Valider</button>
                     </Link>
                 </div>

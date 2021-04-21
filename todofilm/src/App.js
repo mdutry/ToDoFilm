@@ -10,25 +10,31 @@ import PageProfile from './pages/profilUser/PageProfile'
 import PageWishlist from './pages/wishlist/PageWishlist'
 import PageErreur from './pages/erreur/PageErreur'
 import DatasUserContextProvider from './context/DatasUserContext'
+import WishlistContextProvider from './context/WishlistContext'
+import DatasInputContextProvider from './context/DatasInputContext'
 
 function App() {
   return (
     <DatasUserContextProvider>
-      <Router>
+      <WishlistContextProvider>
+        <DatasInputContextProvider>
+          <Router>
 
-        <Switch>
-          <Route exact path="/" component={Accueil} />
-          <Route path="/connexion" component={Connexion} />
-          <Route path="/inscription" component={Inscription} />
-          <Route path="/mot-de-passe-oublie" component={MdPOublie} />
-          <Route path="/recherche" component={PageRecherche} />
-          <Route path="/film/:id" component={PageFilm} />
-          <Route path="/profil" component={PageProfile} />
-          <Route path="/wishlist" component={PageWishlist} />
-          <Route component={PageErreur} />
-        </Switch>
-        
-      </Router>
+            <Switch>
+              <Route exact path="/" component={Accueil} />
+              <Route path="/connexion" component={Connexion} />
+              <Route path="/inscription" component={Inscription} />
+              <Route path="/mot-de-passe-oublie" component={MdPOublie} />
+              <Route path="/recherche" component={PageRecherche} />
+              <Route path="/film/:id" component={PageFilm} />
+              <Route path="/profil" component={PageProfile} />
+              <Route path="/wishlist" component={PageWishlist} />
+              <Route component={PageErreur} />
+            </Switch>
+            
+          </Router>
+        </DatasInputContextProvider>
+      </WishlistContextProvider>
     </DatasUserContextProvider>
   );
 }
