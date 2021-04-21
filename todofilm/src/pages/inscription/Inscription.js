@@ -23,10 +23,7 @@ function Inscription() {
         datasUserContext.nom = datasInputContext.nom
         datasUserContext.email = datasInputContext.email
         datasUserContext.password = datasInputContext.password
-        datasInputContext.prenom = ''
-        datasInputContext.nom = ''
-        datasInputContext.email = ''
-        datasInputContext.password = ''
+        datasInputContext.functionRemoteValue()
     }
 
 

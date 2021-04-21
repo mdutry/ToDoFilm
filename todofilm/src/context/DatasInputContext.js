@@ -118,6 +118,15 @@ class DatasInputContextProvider extends Component {
         }
     }
 
+    functionRemoteValue = () => {
+        this.setState({
+            prenom: '',
+            nom: '',
+            email: '',
+            password: '',
+        })
+    }
+
     functionDisabledButton = (id, condition) => {
         switch (id) {
             case 'prenom' :
@@ -228,6 +237,7 @@ class DatasInputContextProvider extends Component {
                 value={
                     {...this.state,
                     functionRecupValue: this.functionRecupValue,
+                    functionRemoteValue: this.functionRemoteValue,
                     functionDisabledButton: this.functionDisabledButton,
                     remoteSearchMovie: this.remoteSearchMovie
             }}>
