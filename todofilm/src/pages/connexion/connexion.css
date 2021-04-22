@@ -1,0 +1,24 @@
+.bloc-identify-Mdpo {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    color: #ba80d8;
+    height: 3em;
+}
+
+.bloc-identify-button-disabled {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bouton-disabled {
+    cursor: pointer;
+    width: 50%;
+    height: 2em;
+    background-color: #660099; 
+    border-radius: 25px;
+    font-size: 1em;
+    color: white;
+    font-weight: bold;
+}

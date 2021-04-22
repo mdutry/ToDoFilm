@@ -1,20 +1,20 @@
 .bloc-erreur-text {
     padding-left: 2em;
     margin-top: 2em;
+    margin-bottom: 2em;
 }
 
-.bloc-erreur-text > h1 {
+.bloc-erreur-text h1 {
     color: #660099;
     font-size: 2.5em;
     margin-block-start: 0em;
 }
 
-.bloc-erreur-text > p {
+.bloc-erreur-text p {
     margin-block-start: 0;
 }
 
-.bloc-erreur-contenu > img {
+.bloc-central-contenu img {
     width: 75%;
     align-self: center;
-    margin-top: 2em;
 }

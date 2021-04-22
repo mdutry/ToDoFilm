@@ -7,7 +7,8 @@ class DatasUserContextProvider extends Component {
         prenom: '',
         nom: '',
         email: '',
-        password: ''
+        password: '',
+        isAuthenticated: false
     }
 
     render() { 

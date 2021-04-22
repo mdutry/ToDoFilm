@@ -4,8 +4,10 @@ import Header from '../../components/Header'
 import logoErreur from '../../images/erreur_404.png'
 
 const PageErreur = () => {
+
     return (
         <div className="bloc-central">
+
             <Header />
 
             <div className="bloc-central-contenu background-yellow">

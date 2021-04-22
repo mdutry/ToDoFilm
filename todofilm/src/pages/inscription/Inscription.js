@@ -43,6 +43,12 @@ function Inscription() {
                 <InputComponent id='passwordInit-input' placeholder='Mot de passe' type='password' />
                 <InputComponent id='passwordVerif-input' placeholder='Vérification mot de passe' type='password' />
 
+                <div className="bloc-identify-Mdpo">
+                    <Link to="/connexion">
+                        Vous êtes déjà inscrit ? Venez vous connecter 😉
+                    </Link>
+                </div>
+
                 <div className='bloc-identify-button'>
                     <Link to='/connexion'>
                         <button onClick={showData} disabled={verifDisabled} >Valider</button>
