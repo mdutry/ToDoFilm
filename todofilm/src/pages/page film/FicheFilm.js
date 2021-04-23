@@ -3,6 +3,7 @@ import Identite from '../../components/Identite'
 import FilmNotes from '../../components/FilmNotes'
 import FilmAvis from './FilmAvis'
 import FilmCritique from './FilmCritique'
+import FilmDetail from './FilmDetail'
 import './FicheFilm.css'
 import coeurTrue from '../../images/coeur_violet.png';
 import coeurFalse from '../../images/coeur_violet_clair.png';
@@ -59,6 +60,7 @@ function FicheFilm({data}) {
                         
                         <h1>{data.title}</h1>
                     </div>
+
                     <Identite label='Date de sortie : ' data={new Intl.DateTimeFormat('fr-FR').format(released)} />
                     <Identite label='Durée : ' data={`${data.runtime} mn`} />
                     <Identite label='Genre : ' data={data.genre} />
@@ -66,6 +68,7 @@ function FicheFilm({data}) {
                     <Identite label='Avec ' data={data.actors} />
                     <Identite label='Pays : ' data={data.country} />
                     <Identite label='Notes :' id='notes' />
+
                     <div className='notes-detail-film'>
                         <FilmNotes
                             titre='PRESSE'
@@ -78,12 +81,15 @@ function FicheFilm({data}) {
                             small={`${data.spectatorsNote}/5`}
                         />
                     </div>
+                    
                     <Identite label='Récompense : ' data={data.awards} />
                     <button onClick={showModal} >Bande-annonce</button>
                 </div>
             </div>
 
-            <div>FilmDetail.js par Fabrice :-)</div>
+            <FilmDetail
+                data={data.synopsis}
+            />
 
             <FilmCritique
                 data={data.critiquePresse}

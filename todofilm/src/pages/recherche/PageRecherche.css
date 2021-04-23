@@ -93,6 +93,8 @@
     padding-left: 4%;
     display: flex;
     margin-bottom: 1em;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .affichage-film-search-item {
@@ -101,10 +103,14 @@
     justify-content: center;
     align-items: center;
     height: 2em;
-    width: auto;
+    width: 20%;
     border-radius: 2em;
     margin-right: 2em;
-    padding: 0 1em 0 1em;
+    margin-bottom: 1em;
+}
+
+.affichage-film-search-item p {
+    margin: 0 1em 0 1em;
 }
 
 .bloc-affichage-film-item {
@@ -113,4 +119,90 @@
     align-items: flex-start;
     flex-wrap: wrap;
     margin-top: 2em;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1024px)
+{
+    .bloc-recherche {
+        width: 30%;
+    }
+
+    .bloc-affichage-film {
+        width: 70%;
+    }
+
+    .affichage-film-search-item {
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px)
+{
+    .bloc-recherche {
+        width: 100%;
+    }
+
+    .bloc-affichage-film {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .bloc-affichage-film-search {
+        padding-left: 6%;
+    }
+
+    .affichage-film-search-item {
+        width: 42%;
+    }
+
+    .bloc-recherche-component {
+        width: 90%;
+    }
+
+    .bloc-recherche-filtre {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 0.5em;
+    }
+
+    .bloc-recherche-filtre .bloc-recherche-input-filtre {
+        width: 47.5%;
+    }
+
+    .bloc-recherche-input-filtre select {
+        border-radius: 1.5em;
+        height: 2em;
+    }
+
+    .bloc-recherche-input-filtre input[type='text'] {
+        border-radius: 1.5em;
+        height: 2em;
+    }
+
+    .bloc-recherche-button button {
+        height: 3em;
+        border-radius: 2.5em;
+    }
+
+    .filtre-responsive-click {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1em;
+    }
+
+    .filtre-responsive-click img {
+        width: 5%;
+        margin-left: 1em;
+        cursor: pointer;
+    }
+
+    .filtre-responsive-click h3 {
+        margin-block-start: 0.5em;
+        cursor: pointer;
+    }
 }

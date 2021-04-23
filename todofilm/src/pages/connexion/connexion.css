@@ -22,3 +22,19 @@
     color: white;
     font-weight: bold;
 }
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px)
+{
+    .bloc-identify-button-disabled {
+        margin-bottom: 2em;
+    }
+
+    .bouton-disabled {
+        width: 100%;
+        height: 2.5em;
+        font-size: 1.25em;
+    }
+}

@@ -45,3 +45,37 @@
     margin-block-end: 0;
     color: black;
 }
+
+
+/* RESPONSIVE */
+@media (max-width: 1024px)
+{
+    .bloc-item-film-4 {
+        width: 28%;
+    }
+
+    .bloc-item-film-title div {
+        width: 20%;
+    }
+
+    .bloc-item-film-4 a, .bloc-item-film-3 a {
+        width: 80%;
+    }
+}
+
+
+@media (max-width: 768px)
+{
+    .bloc-item-film-4, .bloc-item-film-3 {
+        width: 41%;
+        margin-left: 6%;
+    }
+
+    .bloc-item-film-title div {
+        width: 20%;
+    }
+
+    .bloc-item-film-4 a, .bloc-item-film-3 a {
+        width: 80%;
+    }
+}

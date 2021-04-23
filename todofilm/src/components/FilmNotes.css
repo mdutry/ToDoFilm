@@ -34,3 +34,21 @@
 .bloc-film-notes-critiqueAvis input {
     width: 50%;
 }
+
+
+/* RESPONSIVE */
+@media (max-width: 1024px)
+{
+    .bloc-film-notes-details {
+        width: 100%;
+        align-items: center;
+    }
+
+    .bloc-film-notes-input {
+        width: 100%;
+    }
+
+    .bloc-film-notes-details input {
+        width: 75%;
+    }
+}

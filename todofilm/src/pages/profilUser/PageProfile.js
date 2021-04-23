@@ -1,11 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react'
 import Header from '../../components/Header'
-import { movieList } from '../../datas/movieList'
-import FicheFilm from './FicheFilm'
+import ProfilUser from './ProfilUser'
 import { DatasUserContext } from '../../context/DatasUserContext'
 import { Redirect } from 'react-router'
 
-const PageFilm = (props) => {
+const PageProfile = () => {
 
     const [count, setCount] = useState(5);
     const [redirection, setRedirection] = useState(false);
@@ -16,17 +15,14 @@ const PageFilm = (props) => {
         setTimeout(() => setCount(count - 1), 1000);
         setTimeout(() => setRedirection(true), 5000);
     })
-
-    const {id} = props.match.params
-    const movie = movieList.find(item => item.id === id)
-
+    
     return (
         <div className="bloc-central">
             <Header />
             <div className="bloc-central-contenu background-yellow">
                 {
                     isAuthenticated ?
-                    <FicheFilm data={movie} />
+                    <ProfilUser />
                     :
                     <div className='bloc-authenticated-false'>
                         {
@@ -37,9 +33,10 @@ const PageFilm = (props) => {
                     </div>
                     
                 }
+                
             </div>
         </div>
     )
 }
 
-export default PageFilm;
+export default PageProfile;

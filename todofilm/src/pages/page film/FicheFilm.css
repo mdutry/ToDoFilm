@@ -2,7 +2,7 @@
 .bloc-film {
     display: flex;
     flex-direction: column;
-    margin-top: 2em;
+    margin: 2em
 }
 
 
@@ -26,6 +26,8 @@
 
 /* DÉTAILS FILM */
 .bloc-film-details {
+    display: flex;
+    flex-direction: column;
     width: 65%;
 }
 
@@ -43,7 +45,7 @@
 }
 
 .bloc-film-titre div img {
-    width: 100%;
+    width: 80%;
 }
 
 .bloc-film-titre h1 {
@@ -72,8 +74,8 @@
     background: #660099;
     color: white;
     cursor: pointer;
+    align-self: center;
 }
-
 
 /* BLOC CRITIQUE DE PRESSE */
 .bloc-film-critique {
@@ -171,8 +173,73 @@
     border-radius: 1em;
     text-decoration: none;
     margin-top: 0.5em;
-    width: 5%;
+    width: 10%;
     font-weight: bold;
     background: #660099;
     color: white;
+    cursor: pointer;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1024px)
+{
+    .notes-detail-film {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1em;
+    }
+
+    .bloc-film-poster {
+        width: 40%;
+    }
+
+    .bloc-film-details {
+        width: 55%;
+    }
+
+    .bloc-film-details button {
+        width: 75%;
+        align-self: center;
+    }
+}
+
+
+@media (max-width: 768px)
+{
+    .bloc-film-haut {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bloc-film-poster {
+        width: 60%;
+    }
+
+    .bloc-film-poster img {
+        width: 100%;
+    }
+
+    .bloc-film-details {
+        width: 100%;
+    }
+
+    .bloc-film-titre {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1em;
+    }
+
+    .fiche-film-modal {
+        width: 90%;
+        height: 90%;
+    }
+
+    .fiche-film-modal button {
+        height: 2.5em;
+        border-radius: 2em;
+        margin-top: 1em;
+        width: 20%;
+    }
 }

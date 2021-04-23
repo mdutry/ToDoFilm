@@ -4,6 +4,7 @@
 
 .bloc-wishlist-top label {
     margin-right: 1em;
+    margin-bottom: 0.5em;
     color: #BA80D8;
 }
 
@@ -19,4 +20,21 @@
     margin-top: 2em;
     display: flex;
     flex-wrap: wrap;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px)
+{
+    .bloc-wishlist-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bloc-wishlist-top select {
+        border-radius: 1.5em;
+        height: 2em;
+        width: 40%;
+    }
 }
