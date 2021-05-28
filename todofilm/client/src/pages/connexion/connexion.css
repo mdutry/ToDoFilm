@@ -1,0 +1,53 @@
+.bloc-identify-text-lien {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.bloc-identify-text-lien a {
+    color: #ba80d8;
+    margin-block-end: 0em;
+    margin-bottom: 0.5em;
+}
+
+.bloc-identify-connexion-button {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bloc-identify-connexion-button button {
+    cursor: pointer;
+    width: 50%;
+    height: 2em;
+    background-color: #660099; 
+    border: 0;
+    border-radius: 25px;
+    font-size: 1em;
+    color: white;
+    font-weight: bold;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px)
+{
+    .bloc-identify-button {
+        margin-bottom: 2em;
+    }
+
+    .button-disabled {
+        width: 100%;
+        height: 2.5em;
+        font-size: 1.25em;
+    }
+}
