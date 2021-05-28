@@ -21,6 +21,7 @@ exports.inscription = async (req, res, next) => {
         res.status(201).json({ message: 'Utilisateur créé !' })
     } catch (error) {
         res.status(500).json({ error })
+        console.log(error)
     }
 }
 

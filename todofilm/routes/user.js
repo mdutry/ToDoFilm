@@ -10,17 +10,17 @@ const userController = require('../controllers/user')
 
 const router = express.Router()
 
-router.get('/user/:id', userController.recupInfoUser)
-router.patch('/user/:id', userController.modifInfoUser)
-router.patch('/user/:id/password', userController.modifPasswordUser)
-router.delete('/user/:id', userController.deleteInfoUser)
+router.get('/api/user/:id', userController.recupInfoUser)
+router.patch('/api/user/:id', userController.modifInfoUser)
+router.patch('/api/user/:id/password', userController.modifPasswordUser)
+router.delete('/api/user/:id', userController.deleteInfoUser)
 
-router.patch('/user/:id/wishlist', userController.ajoutMovie)
-router.delete('/user/:id/wishlist/:movieid', userController.deleteMovie)
+router.patch('/api/user/:id/wishlist', userController.ajoutMovie)
+router.delete('/api/user/:id/wishlist/:movieid', userController.deleteMovie)
 
 // React
-// router.get('/*', (_, res) => {
-//   res.sendFile(path.join(__dirname, '../client/build/index.html'))
-// })
+router.get('/*', (_, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'))
+})
 
 module.exports = router

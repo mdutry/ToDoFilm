@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
 
 const uniqueValidator = require('mongoose-unique-validator')
 
@@ -31,7 +32,7 @@ const userSchema = mongoose.Schema({
 userSchema.plugin(uniqueValidator)
 
 userSchema.pre('save', async function(next){
-    if (this.isNew || this.isModified('password')) this.password = await bcrypt.hash(this.password, saltRounds)
+    if (this.isNew || this.isModified('password')) this.password = await bcrypt.hash(this.password, 10)
     next()
   })
 
