@@ -3,7 +3,7 @@ const passwordResetController = require('../controllers/passwordReset')
 
 const router = express.Router()
 
-router.post('/reset', passwordResetController.reset)
-router.post('/reset-confirm/:token', passwordResetController.resetConfirm)
+router.post('/api/reset', passwordResetController.reset)
+router.post('/api/reset-confirm/:token', passwordResetController.resetConfirm)
 
 module.exports = router
