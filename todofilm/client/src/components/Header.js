@@ -19,7 +19,7 @@ function Header() {
    const userId = localStorage.userId
 
    useEffect (() => {
-      axios.get(`http://localhost:5000/api/user/${userId}`)
+      axios.get(`/api/user/${userId}`)
          .then (res => {
             datasUser.prenom = res.data.user.prenom
          })

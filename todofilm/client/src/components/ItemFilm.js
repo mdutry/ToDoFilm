@@ -15,7 +15,7 @@ function ItemFilm({id, poster, title, numb}) {
     const userId = localStorage.userId
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/user/${userId}`)
+        axios.get(`/api/user/${userId}`)
             .then (res => {
                 setWishlist(res.data.user.wishlist)
             })

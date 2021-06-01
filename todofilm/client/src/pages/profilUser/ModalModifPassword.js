@@ -35,7 +35,7 @@ function ModalModifPassword({showModal, hideModal}) {
         }
         
         if (values.verifPassword === values.newPassword) {
-            axios.patch( `http://localhost:5000/api/user/${userId}/password`, { oldPassword: values.oldPassword, newPassword: values.newPassword })
+            axios.patch( `/api/user/${userId}/password`, { oldPassword: values.oldPassword, newPassword: values.newPassword })
                 .then(function (reponse) {
                     console.log(reponse);
                     document.getElementById('modif-oldPassword').innerHTML = ''

@@ -10,7 +10,9 @@ dotenv.config()
 exports.inscription = async (req, res, next) => {
     try {
         const salt = await bcrypt.genSalt(10)
+        console.log('password', req.body.password)
         const hash = await bcrypt.hash(req.body.password, salt)
+        console.log('hash', hash)
         const user = new User ({
             prenom: req.body.prenom,
             nom: req.body.nom,
@@ -31,6 +33,7 @@ exports.connexion = async (req, res, next) => {
         if (!user) {
             return res.status(401).json({ message: 'Utilisateur non trouvé !' })
         }
+        console.log(user)
 
         const compare = await bcrypt.compare(req.body.password, user.password)
         if (!compare) {

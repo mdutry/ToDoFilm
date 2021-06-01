@@ -4,6 +4,7 @@ const PasswordReset = require('../models/PasswordReset.js')
 const { v4 } = require('uuid')
 const { sendEmail } = require('../middleware/helpers.js')
 const bcrypt = require('bcrypt')
+const path = require('path')
 
 exports.reset = async (req, res) => {
     // Check if user with provided email exists
@@ -28,7 +29,7 @@ exports.reset = async (req, res) => {
     )
         .then( updateResponse => {
             // Envoi d'un e-mail à l'utilisateur contenant le lien de réinitialisation du mot de passe
-            const resetLink = `${process.env.DOMAIN}/mot-de-passe-oublie-modif/${token}`
+            const resetLink = path.join(__dirname, `mot-de-passe-oublie-modif/${token}`)
             console.log(resetLink)
 
             sendEmail({

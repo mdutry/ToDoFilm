@@ -18,7 +18,7 @@ function ModalModifInfos({ showModal, hideModal }) {
         if (prenom !== '') {
             let testText = nameRegExp.test(prenom);
             if (testText) {
-                axios.patch( `http://localhost:5000/api/user/${userId}`, { prenom: prenom })
+                axios.patch( `/api/user/${userId}`, { prenom: prenom })
                     .then(function (reponse) {
                         console.log(reponse)
                     })
@@ -38,7 +38,7 @@ function ModalModifInfos({ showModal, hideModal }) {
         if (nom !== '') {
             let testText = nameRegExp.test(nom);
             if (testText) {
-                axios.patch( `http://localhost:5000/api/user/${userId}`, { nom: nom })
+                axios.patch( `/api/user/${userId}`, { nom: nom })
                     .then(function (reponse) {
                         console.log(reponse);
                     })
@@ -58,7 +58,7 @@ function ModalModifInfos({ showModal, hideModal }) {
         if (email !== '') {
             let testText = emailRegExp.test(email);
             if (testText) {
-                axios.patch( `http://localhost:5000/api/user/${userId}`, { email: email })
+                axios.patch( `/api/user/${userId}`, { email: email })
                     .then(function (reponse) {
                         console.log(reponse);
                     })

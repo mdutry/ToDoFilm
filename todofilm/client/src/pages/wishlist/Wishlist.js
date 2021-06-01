@@ -13,14 +13,14 @@ function Wishlist() {
     const userId = localStorage.userId
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/user/${userId}`)
+        axios.get(`/api/user/${userId}`)
             .then (res => {
                 wishlistContext.liste = res.data.user.wishlist
             })
     }, [])
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/user/${userId}`)
+        axios.get(`/api/user/${userId}`)
             .then (res => {
                 wishlistContext.liste = res.data.user.wishlist
             })

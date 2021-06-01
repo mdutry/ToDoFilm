@@ -22,7 +22,7 @@ const Connexion = () => {
     const handleClick = (e) => {
         e.preventDefault()
         axios.post(
-            'http://localhost:5000/api/connexion',
+            '/api/connexion',
             {
                 email: values.email,
                 password: values.password

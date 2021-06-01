@@ -19,7 +19,7 @@ function Inscription() {
 
     const showData = () => {
         axios.post(
-            'http://localhost:5000/api/inscription',
+            '/api/inscription',
             {
                 prenom: datasInputContext.prenom,
                 nom: datasInputContext.nom,

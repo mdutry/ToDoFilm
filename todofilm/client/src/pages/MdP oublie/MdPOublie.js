@@ -15,7 +15,7 @@ const MdPOublie = (props) => {
     const handleClick = (e) => {
         e.preventDefault()
         axios.post(
-            'http://localhost:5000/api/reset',
+            '/api/reset',
                 {
                     email: value
                 }

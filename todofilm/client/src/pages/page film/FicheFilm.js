@@ -21,14 +21,14 @@ function FicheFilm({ data }) {
     const userId = localStorage.userId
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/user/${userId}`)
+        axios.get(`/api/user/${userId}`)
             .then (res => {
                 setWishlist(res.data.user.wishlist)
             })
     }, [])
 
     const addMovie = (id) => {
-        axios.patch( `http://localhost:5000/api/user/${userId}/wishlist`, { movieId: id })
+        axios.patch( `/api/user/${userId}/wishlist`, { movieId: id })
             .then(function (reponse) {
                 console.log(reponse);
             })
@@ -38,7 +38,7 @@ function FicheFilm({ data }) {
     }
 
     const removeMovie = (id) => {
-        axios.delete( `http://localhost:5000/api/user/${userId}/wishlist/${id}`)
+        axios.delete( `/api/user/${userId}/wishlist/${id}`)
             .then(function (reponse) {
                 console.log(reponse);
             })

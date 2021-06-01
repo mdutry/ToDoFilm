@@ -27,7 +27,7 @@ const MdPOublieConfirm = (props) => {
 
         if (values.password === values.passwordVerif && testPassword === true) {
             axios.post(
-                `http://localhost:5000/api/reset-confirm/${token}`,
+                `/api/reset-confirm/${token}`,
                     {
                         password: values.password
                     }

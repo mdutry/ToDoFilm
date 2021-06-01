@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 const auth = require('./routes/auth.js')
 const user = require('./routes/user.js')
 const passwordReset = require('./routes/passwordReset.js')
+const cors = require("cors");
+const path = require("path")
 
 // définition de dotenv pour une utilisation d'un fichier .env
 const dotenv = require('dotenv')
@@ -23,8 +25,10 @@ mongoose.connect(process.env.MONGODB, {
 // Définition de notre objet express nommé app
 const app = express()
 
+app.use(cors());
+
 // gestion des routes avec React
-// app.use(express.static('client/build'))
+app.use(express.static(path.resolve(__dirname, "./client/build")))
 
 // Body Parser
 const urlencodedParser = bodyParser.urlencoded({
@@ -44,9 +48,13 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/api', auth)
-app.use('/api', user)
-app.use('/api', passwordReset)
+app.use(auth)
+app.use(user)
+app.use(passwordReset)
+
+app.get("*", (_, res) => {
+  res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+})
 
 // Définition et mise en place du port d'écoute
 const PORT = process.env.PORT || 5000
