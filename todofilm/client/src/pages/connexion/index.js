@@ -3,7 +3,7 @@ import Logo from '../../components/Logo';
 import '../../styles/general.css';
 import { Link, Redirect } from 'react-router-dom';
 import { informationText } from '../../datas/informationText';
-import './connexion.css';
+import './styles.css';
 import axios from 'axios'
 import '../../components/InputComponent.css'
 

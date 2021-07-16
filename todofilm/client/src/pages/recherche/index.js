@@ -2,7 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react'
 import Header from '../../components/Header'
 import Recherche from './Recherche'
 import AffichageFilm from './AffichageFilm'
-import './PageRecherche.css';
+import './styles.css';
 import { Redirect } from 'react-router'
 
 function PageRecherche() {

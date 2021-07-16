@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect, Fragment } from 'react'
-import {DatasInputContext} from '../../context/DatasInputContext'
-import './PageRecherche.css';
+import { DatasInputContext } from '../../context/DatasInputContext'
+import './styles.css';
 import { optionYear, optionGenre, optionCountry } from './RechercheFunctions'
 import menuNoir from '../../images/menu_noir.png';
 import croixNoir from '../../images/croix_noir.png';

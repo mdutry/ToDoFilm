@@ -2,8 +2,8 @@ import React from 'react';
 import { Link} from 'react-router-dom';
 import Logo from '../../components/Logo'
 import '../../styles/general.css'
-import './Accueil.css'
-import {informationText} from '../../datas/informationText'
+import './HomeVisitor.css'
+import { informationText } from '../../datas/informationText'
 
 function Accueil() {
     return (

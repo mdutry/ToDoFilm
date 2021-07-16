@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import ItemFilm from '../../components/ItemFilm'
 import { DatasInputContext } from '../../context/DatasInputContext';
 import { movieList } from '../../datas/movieList'
-import './PageRecherche.css';
+import './styles.css';
 
 function AffichageFilm() {
 

@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import './FilmNotes.css'
+import React, { Component } from 'react'
+import './styles.css'
 
 class FilmNotes extends Component {
 

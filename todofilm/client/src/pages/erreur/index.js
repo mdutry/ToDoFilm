@@ -1,5 +1,5 @@
 import React from 'react'
-import './PageErreur.css'
+import './styles.css'
 import Header from '../../components/Header'
 import logoErreur from '../../images/erreur_404.png'
 

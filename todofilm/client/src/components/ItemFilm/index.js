@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react'
-import './ItemFilm.css';
-import coeurFalse from '../images/coeur_violet_clair.png'
-import coeurTrue from '../images/coeur_violet.png'
+import './styles.css';
+import coeurFalse from '../../images/coeur_violet_clair.png'
+import coeurTrue from '../../images/coeur_violet.png'
 import { Link } from 'react-router-dom'
-import { WishlistContext } from '../context/WishlistContext'
+import { WishlistContext } from '../../context/WishlistContext'
 import axios from 'axios';
 
 function ItemFilm({id, poster, title, numb}) {

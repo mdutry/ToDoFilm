@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import logo_ToDoFilm_blanc from '../images/logo_ToDoFilm_blanc.png';
-import { DatasUserContext } from '../context/DatasUserContext'
-import avatar from '../images/avatar.png';
-import loupe from '../images/loupe.png';
-import menuBlanc from '../images/menu_blanc.png';
-import croixBlanche from '../images/croix_blanche.png';
-import './Header.css';
-import useScreenSize from "./useScreenSize"
+import logo_ToDoFilm_blanc from '../../images/logo_ToDoFilm_blanc.png';
+import { DatasUserContext } from '../../context/DatasUserContext'
+import avatar from '../../images/avatar.png';
+import loupe from '../../images/loupe.png';
+import menuBlanc from '../../images/menu_blanc.png';
+import croixBlanche from '../../images/croix_blanche.png';
+import './styles.css';
+import useScreenSize from "../useScreenSize"
 import axios from 'axios';
 
 

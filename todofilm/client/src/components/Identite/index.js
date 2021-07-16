@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './Identite.css'
+import './styles.css'
 
 class Identite extends Component {
 

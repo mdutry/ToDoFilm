@@ -17,13 +17,6 @@ function Wishlist() {
             .then (res => {
                 wishlistContext.liste = res.data.user.wishlist
             })
-    }, [])
-
-    useEffect(() => {
-        axios.get(`/api/user/${userId}`)
-            .then (res => {
-                wishlistContext.liste = res.data.user.wishlist
-            })
     }, [wishlistContext])
     
     const wishlistMovies = []
