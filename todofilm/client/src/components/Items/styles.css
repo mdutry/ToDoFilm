@@ -1,0 +1,89 @@
+.bloc-item-film-4 {
+    width: 20%;
+    margin-bottom: 2em;
+    margin-left: 4%;
+}
+
+.bloc-item-film-3 {
+    width: 28%;
+    margin-bottom: 2em;
+    margin-left: 4%;
+}
+
+.bloc-item-film {
+    width: 100%;
+}
+
+.link-poster {
+    width: 90%;
+    text-decoration: none;
+}
+
+.bloc-item-poster {
+    width: 100%;
+}
+
+.bloc-item-film-4 a > img, .bloc-item-film-3 a > img .bloc-item-film > a > img {
+    width: 90%;
+}
+
+.bloc-item-film-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.bloc-heart {
+    width: 15%;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.link-title {
+    width: 85%;
+    text-decoration: none;
+}
+
+.title-item-film {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    color: black;
+}
+
+.bloc-item-film-4 p, .bloc-item-film-3 p, .bloc-item-film p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    color: black;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1024px)
+{
+    .bloc-item-film-title div {
+        width: 20%;
+    }
+
+    .bloc-item-film-4 a, .bloc-item-film-3 a {
+        width: 80%;
+    }
+}
+
+
+@media (max-width: 768px)
+{
+    .bloc-item-film-4, .bloc-item-film-3 {
+        width: 41%;
+        margin-left: 6%;
+    }
+
+    .bloc-item-film-title div {
+        width: 20%;
+    }
+
+    .bloc-item-film-4 a, .bloc-item-film-3 a {
+        width: 80%;
+    }
+}

@@ -1,0 +1,11 @@
+.bloc-film-critique {
+    margin-bottom: 1.5em;
+}
+
+.bloc-film-critique h2 {
+    margin-block-end: 0em;
+}
+
+.bloc-film-critique div p {
+    margin-block-start: 0.5em;
+}

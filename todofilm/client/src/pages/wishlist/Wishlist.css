@@ -1,0 +1,41 @@
+.bloc-wishlist-top {
+    margin-top: 1em;
+}
+
+.bloc-wishlist-top label {
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+    color: #BA80D8;
+}
+
+.bloc-wishlist-top select {
+    border: solid 1px #660099;
+    border-radius: 0.5em;
+    height: 1.5em;
+    padding: 0 1em 0 1em;
+    color: #660099;
+}
+
+.bloc-wishlist-movies {
+    margin-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px)
+{
+    .bloc-wishlist-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bloc-wishlist-top select {
+        border-radius: 1.5em;
+        height: 2em;
+        width: 40%;
+    }
+}

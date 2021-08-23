@@ -1,0 +1,43 @@
+.bloc-film-avis a {
+    color: #660099;
+}
+
+.bloc-film-avis h2 {
+    margin-block-end: 0em;
+}
+
+.bloc-film-avis div p {
+    margin-block-start: 0.5em;
+}
+
+.bloc-avatar-avis {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 1em;
+}
+
+.avatar-spectateur {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.avatar-spectateur img {
+    width: 95%;
+}
+
+.avatar-spectateur p {
+    margin-block-start: 0.5em;
+}
+
+.avis-spectateur {
+    width: 83%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
