@@ -24,7 +24,13 @@ const userSchema = mongoose.Schema({
     imageUrl: {
         type: String
     },
-    wishlist: {
+    wishlistMovie: {
+        type: Array
+    },
+    wishlistSerie: {
+        type: Array
+    },
+    wishlistPerson: {
         type: Array
     }
 })

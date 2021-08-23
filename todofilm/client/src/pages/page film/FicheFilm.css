@@ -136,3 +136,12 @@
         margin-bottom: 1em;
     }
 }
+
+/* SVG LOADER */
+.svg-loader {
+    margin: auto;
+    display: block;
+    shape-rendering: auto;
+    width: 75%;
+    height: 75%;
+}

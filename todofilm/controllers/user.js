@@ -53,25 +53,77 @@ exports.deleteInfoUser = async (req, res, next) => {
 }
 
 exports.ajoutMovie = async (req, res, next) => {
-    try {
-        const movie = await User.updateOne(
-            { _id: req.params.id },
-            { $push: { wishlist: req.body.movieId } }
-        )
-        res.status(200).json({ message: 'Film ajouté !' })
-    } catch (error) {
-        res.status(400).json({ error })
+    if (req.body.movieId) {
+        try {
+            const movie = await User.updateOne(
+                { _id: req.params.id },
+                { $push: { wishlistMovie: req.body.movieId } }
+            )
+            res.status(200).json({ message: 'Film ajouté !' })
+        } catch (error) {
+            res.status(400).json({ error })
+        }
     }
+    
+    if (req.body.serieId) {
+        try {
+            const movie = await User.updateOne(
+                { _id: req.params.id },
+                { $push: { wishlistSerie: req.body.serieId } }
+            )
+            res.status(200).json({ message: 'Série ajouté !' })
+        } catch (error) {
+            res.status(400).json({ error })
+        }
+    }
+    
+    if (req.body.personId) {
+        try {
+            const movie = await User.updateOne(
+                { _id: req.params.id },
+                { $push: { wishlistPerson: req.body.personId } }
+            )
+            res.status(200).json({ message: 'Personne ajoutée !' })
+        } catch (error) {
+            res.status(400).json({ error })
+        }
+    }    
 }
 
 exports.deleteMovie = async (req, res, next) => {
-    try {
-        const movie = await User.updateOne(
-            { _id: req.params.id },
-            { $pull: { wishlist: parseInt(req.params.movieid) } }
-        )
-        res.status(200).json({ message: 'Film supprimé !' })
-    } catch (error) {
-        res.status(400).json({ error })
+    if (req.params.movieid) {
+        try {
+            const movie = await User.updateOne(
+                { _id: req.params.id },
+                { $pull: { wishlistMovie: parseInt(req.params.movieid) } }
+            )
+            res.status(200).json({ message: 'Film supprimé !' })
+        } catch (error) {
+            res.status(400).json({ error })
+        }
+    }
+
+    if (req.params.serieid) {
+        try {
+            const movie = await User.updateOne(
+                { _id: req.params.id },
+                { $pull: { wishlistSerie: parseInt(req.params.serieid) } }
+            )
+            res.status(200).json({ message: 'Série supprimé !' })
+        } catch (error) {
+            res.status(400).json({ error })
+        }
+    }
+
+    if (req.params.personid) {
+        try {
+            const movie = await User.updateOne(
+                { _id: req.params.id },
+                { $pull: { wishlistPerson: parseInt(req.params.personid) } }
+            )
+            res.status(200).json({ message: 'Personne supprimée !' })
+        } catch (error) {
+            res.status(400).json({ error })
+        }
     }
 }

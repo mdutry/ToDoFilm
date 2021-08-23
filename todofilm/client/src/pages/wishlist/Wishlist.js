@@ -3,8 +3,9 @@ import ItemFilm from '../../components/Items/ItemFilm'
 import './Wishlist.css';
 import { WishlistContext } from '../../context/WishlistContext'
 import axios from 'axios';
+import WishlistTheme from './WishlistTheme';
 
-function Wishlist({ wishlistMovies }) {
+function Wishlist({ wishlistMovies, wishlistSeries, wishlistPersons }) {
 
     const [tri, setTri] = useState('')
     const [wishlist, setWishlist] = useState('')
@@ -12,15 +13,15 @@ function Wishlist({ wishlistMovies }) {
 
     const userId = localStorage.userId
 
-    useEffect(() => {
-        setWishlist(wishlistMovies)
-    }, [])
+    // useEffect(() => {
+    //     setWishlist(wishlistMovies)
+    // }, [])
 
     useEffect(() => {
         axios.get(`/api/user/${userId}`)
             .then (res => {
-                wishlistContext.liste = res.data.user.wishlist
-                console.log(wishlistContext.liste)
+                wishlistContext.movieListe = res.data.user.wishlistMovie
+                console.log(wishlistContext.movieListe)
             })
     }, [wishlistContext])
     
@@ -29,23 +30,26 @@ function Wishlist({ wishlistMovies }) {
     //     wishlistMovies.push(movieList.find(item => item.id === id)
     // )))    
 
-    const wishListMoviesSortieMoins = [].concat(wishlistMovies)
-    wishListMoviesSortieMoins.sort((a, b) => new Date(a.release_date) - new Date(b.release_date))
+    // const wishListMoviesSortieMoins = [].concat(wishlistMovies)
+    // wishListMoviesSortieMoins.sort((a, b) => new Date(a.release_date) - new Date(b.release_date))
 
-    const wishListMoviesSortiePlus = [].concat(wishlistMovies)
-    wishListMoviesSortiePlus.sort((a, b) => new Date(b.release_date) - new Date(a.release_date))
+    // const wishListMoviesSortiePlus = [].concat(wishlistMovies)
+    // wishListMoviesSortiePlus.sort((a, b) => new Date(b.release_date) - new Date(a.release_date))
 
-    const wishListMoviesDureePlus = [].concat(wishlistMovies)
-    wishListMoviesDureePlus.sort((a, b) => a.runtime - b.runtime)
+    // const wishListMoviesDureePlus = [].concat(wishlistMovies)
+    // wishListMoviesDureePlus.sort((a, b) => a.runtime - b.runtime)
 
-    const wishListMoviesDureeMoins = [].concat(wishlistMovies)
-    wishListMoviesDureeMoins.sort((a, b) => b.runtime - a.runtime)
+    // const wishListMoviesDureeMoins = [].concat(wishlistMovies)
+    // wishListMoviesDureeMoins.sort((a, b) => b.runtime - a.runtime)
 
     return (
         <div className='bloc-wishlist'>
-            <div className='bloc-wishlist-top'>
-                <h1>Wishlist</h1>
-                <label>Trier par : </label>
+            {/* <div className='bloc-wishlist-top'>
+                <h1>Wishlist</h1> */}
+                <WishlistTheme wishlistMovies={wishlistMovies} />
+                <WishlistTheme wishlistSeries={wishlistSeries}/>
+                <WishlistTheme wishlistPersons={wishlistPersons} />
+                {/* <label>Trier par : </label>
                 <select value ={tri} onChange={(e) => setTri(e.target.value)}>
                     <option value =''>Ajout récent</option>
                     <option value ='sortiePlus'>Date de sortie la plus récente</option>
@@ -102,8 +106,8 @@ function Wishlist({ wishlistMovies }) {
                             />
                         ))
                     }
-                </div>
-            </div>
+                </div> */}
+            {/* </div> */}
         </div>
     )
 }
