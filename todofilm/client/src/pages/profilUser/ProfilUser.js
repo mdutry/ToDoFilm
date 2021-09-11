@@ -42,6 +42,17 @@ function ProfilUser() {
         }
     }
 
+    const deleteProfil = () => {
+        axios.delete(`/api/user/${userId}`)
+            .then(function (reponse) {
+                console.log(reponse)
+            })
+            .catch(function (erreur) {
+                console.log(erreur);
+            })
+        localStorage.clear()
+    }
+
     const deconnectFunction = () => {
         localStorage.clear()
     }
@@ -64,6 +75,7 @@ function ProfilUser() {
                 <Identite label="Adresse mail : " data={datasUser.email} />
                 <button name='modalPassword' onClick={(e) => showModal(e)} className="input-modif-info">Modifier le mot de passe</button>
                 <button name='modalInfos' onClick={(e) => showModal(e)} className="input-modif-info">Modifier les informations</button>
+                <Link to='/' onClick={deleteProfil} className="input-delete">Supprimer le profil</Link>
                 <Link to='/' onClick={deconnectFunction} className="input-deconnexion">Déconnexion</Link>
             </div>
 

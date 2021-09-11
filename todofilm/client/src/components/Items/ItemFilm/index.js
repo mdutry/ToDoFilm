@@ -18,7 +18,7 @@ function ItemFilm({ id, poster, title, numb }) {
     useEffect(() => {
         axios.get(`/api/user/${userId}`)
             .then (res => {
-                setWishlist(res.data.user.wishlist)
+                setWishlist(res.data.user.wishlistMovie)
                 setIsLoading(false)
             })
     }, [])
@@ -35,7 +35,7 @@ function ItemFilm({ id, poster, title, numb }) {
     }
 
     const removeMovie = (id) => {
-        axios.delete( `/api/user/${userId}/wishlist/${id}`)
+        axios.delete( `/api/user/${userId}/wishlistMovie/${id}`)
             .then(function (reponse) {
                 console.log(id, reponse);
                 wishlistContext.removeMovie(id)

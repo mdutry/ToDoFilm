@@ -18,16 +18,16 @@ function ItemSerie({ id, poster, title }) {
     useEffect(() => {
         axios.get(`/api/user/${userId}`)
             .then (res => {
-                setWishlist(res.data.user.wishlist)
+                setWishlist(res.data.user.wishlistSerie)
                 setIsLoading(false)
             })
     }, [])
 
     const addMovie = (id) => {
-        axios.patch( `/api/user/${userId}/wishlist`, { movieId: id })
+        axios.patch( `/api/user/${userId}/wishlist`, { serieId: id })
             .then(function (reponse) {
                 console.log(reponse);
-                wishlistContext.addMovie(id)
+                wishlistContext.addSerie(id)
             })
             .catch(function (erreur) {
                 console.log(erreur);
@@ -35,10 +35,10 @@ function ItemSerie({ id, poster, title }) {
     }
 
     const removeMovie = (id) => {
-        axios.delete( `/api/user/${userId}/wishlist/${id}`)
+        axios.delete( `/api/user/${userId}/wishlistSerie/${id}`)
             .then(function (reponse) {
                 console.log(id, reponse);
-                wishlistContext.removeMovie(id)
+                wishlistContext.removeSerie(id)
             })
             .catch(function (erreur) {
                 console.log(erreur);
