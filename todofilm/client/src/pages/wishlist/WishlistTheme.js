@@ -6,10 +6,6 @@ import './Wishlist.css';
 
 function WishlistTheme({ wishlistMovies, wishlistSeries, wishlistPersons }) {
 
-    console.log('wishlistMovies', wishlistMovies)
-    console.log('wishlistSeries', wishlistSeries)
-    console.log('wishlistPersons', wishlistPersons)
-
     const [tri, setTri] = useState('')
 
     const arrayDateAncienne = wishlistMovies
