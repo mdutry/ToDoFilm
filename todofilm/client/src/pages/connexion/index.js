@@ -32,7 +32,6 @@ const Connexion = () => {
                 setValues({ email: '', password:'' })
                 localStorage.isAuthenticated = true
                 localStorage.userId = reponse.data.userId
-                console.log(reponse);
                 setRedirect(true)
             })
             .catch(function (erreur) {
@@ -72,7 +71,7 @@ const Connexion = () => {
 
                     {
                         (redirect) ?
-                        <Redirect to='/recherche' />
+                        <Redirect to='/' />
                         :
                         <div className='bloc-identify-connexion-button'>
                             <button type='submit'>Valider</button>

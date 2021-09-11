@@ -6,6 +6,10 @@ import './Wishlist.css';
 
 function WishlistTheme({ wishlistMovies, wishlistSeries, wishlistPersons }) {
 
+    console.log('wishlistMovies', wishlistMovies)
+    console.log('wishlistSeries', wishlistSeries)
+    console.log('wishlistPersons', wishlistPersons)
+
     const [tri, setTri] = useState('')
 
     const arrayDateAncienne = wishlistMovies
@@ -53,6 +57,10 @@ function WishlistTheme({ wishlistMovies, wishlistSeries, wishlistPersons }) {
                         </select>
                     </div>
                     <div className='bloc-wishlist-movies'>
+                        {
+                            wishlistMovies.length === 0 &&
+                            <p>Vous n'avez pas de films dans votre wishlist 😞</p>
+                        }
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
                             {
                                 tri === 'sortiePlus'
@@ -120,6 +128,10 @@ function WishlistTheme({ wishlistMovies, wishlistSeries, wishlistPersons }) {
                         </select>
                     </div>
                     <div className='bloc-wishlist-movies'>
+                        {
+                            wishlistSeries.length === 0 &&
+                            <p>Vous n'avez pas de séries dans votre wishlist 😞</p>
+                        }
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
                             {
                                 tri === 'sortiePlus'
@@ -187,6 +199,10 @@ function WishlistTheme({ wishlistMovies, wishlistSeries, wishlistPersons }) {
                         </select>
                     </div>
                     <div className='bloc-wishlist-movies'>
+                        {
+                            wishlistPersons.length === 0 &&
+                            <p>Vous n'avez pas de célébrités dans votre wishlist 😞</p>
+                        }
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
                             {
                                 tri === 'sortiePlus'
