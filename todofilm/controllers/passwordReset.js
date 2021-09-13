@@ -2,7 +2,6 @@ const router  = require('express').Router()
 const User = require('../models/user.js')
 const PasswordReset = require('../models/PasswordReset.js')
 const { v4 } = require('uuid')
-const { sendEmail } = require('../middleware/helpers.js')
 const bcrypt = require('bcrypt')
 const path = require('path')
 
