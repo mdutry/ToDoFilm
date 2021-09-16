@@ -112,12 +112,12 @@ h2 {
 {
     .bloc-central-contenu {
         width: 80%;
-        padding-left: 2em;
-        padding-right: 2em;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .bloc-authenticated-false {
-        padding: 0 2em 0 2em;
+        padding: 0;
     }
 }
 
@@ -126,8 +126,6 @@ h2 {
 {
     .bloc-central-contenu {
         width: 100%;
-        padding-left: 4em;
-        padding-right: 4em;
     }
     
     .bloc-identify {
